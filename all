@@ -1,170 +1,4 @@
-1)Develop a program to check the entered user name is valid or not. Get both the inputs from the user. 
-Sample Input: 
-Enter the user name: Saveetha@789 
-Reenter the user name: Saveetha@123 
-Sample Output: 
-User name is Invalid 
-Program
-#include<iostream> 
-#include<string.h> 
-using namespace std;
- int main() 
-{ 
-	string a,b; 
-	cout<<"ENTER THE USER NAME =>";  	
-cin>>a; 
-	cout<<"\nREENTER THE USER NAME =>";  	
-cin>>b;  	
-if(a==b) 
-	cout<<"VALID USER NAME";  	
-else 
-cout<<"INVALID USER NAME"; 
-	} 
-2)Identify  the Mth maximum number and Nth minimum number in an array and then find the sum of it and difference of it. 
-Sample Input: 
-Array of elements = {14, 16, 87, 36, 25, 89, 34}
-M	= 1 
-N	= 3 
-Sample Output: 
-1stMaximum Number = 89 
-3rdMinimum Number = 25 
-Sum = 114 
-Difference = 64 
-Program:
-#include<iostream>
-using namespace std;
-int main()
-{
- int a[20],i,j,n,x,y,temp,diff,sum;
- cout<<"enter the no of elements: ";
- cin>>n;
- cout<<"enter the elements";
- for(i=1;i<=n;i++)
- {
-    cin>>a[i];
- }
- cout<<"enter the mth maximum value: ";
- cin>>x;
- cout<<"enter the nth minimum value: ";
- cin>>y;
- if(x<0||y<0||x>n||y>n)
- {
- 	cout<<"invalid input";
- }
- else
- {
- for(i=1;i<=n-1;i++)
- {
-  for(j=i+1;j<=n;j++)
-  {
-   if(a[i]>a[j])
-   {
-    temp=a[i];
-    a[i]=a[j];
-    a[j]=temp;
-}
-  }
- }
- sum=a[n-(x-1)]+a[y];
- diff=a[n-(x-1)]-a[y];
- cout<<"the maximum element is "<<a[n-(x-1)]<<"\n";
- cout<<"the minimum element is "<<a[y]<<"\n";
- cout<<"the sum of maximum and minimum is "<<sum<<"\n";
- cout<<"the difference of maximum and minimum is "<<diff<<"\n";}}
-3)Build a program to reverse a number using loop?(Get the input from user) 
-Sample Input: 
-Number: 14567 
-Sample Output: Reverse Number: 76541 
-output:
-#include<iostream>
-using namespace std;
-int reversenum(int n){
-int rev,digit;
-while(n!=0){
-digit=n%10;
-rev=rev*10+digit;
-n=n/10;
-}
-return rev;
-}
-int main()
-{
-int num,j;
-cout<<"enter a number to reverse =>";
-cin>>num;
-if(num<=0)
-{
-	cout<<"Invalid Input";
-}
-else
-{
-	j=reversenum(num);
-}
-j=reversenum(num);
-cout<<j;
-} 
-4)Develop  a program to find whether the person is eligible for vote or not. And if that particular person is not eligible, then print how many years are left to be eligible.  
-Sample Input: 
- Enter your age: 7 
-Sample output: 
-You are allowed to vote after 11 years 
-#include<iostream>
-using namespace std;
-int main()
-{
-int age;
-cout<<"\nenter your age : ";
-cin>>age;
-if(age>=18)
-cout<<"\nyou are eligible to vote!!!";
-else if(age<18)
-cout<<"\nyou are allowed to vote after "<<18-age<<"year";
-}
-5)Develop  a program using choice to check  
-Case 1: Given string is palindrome or not Case 2: Given number is palindrome or not Sample Input: 
-Case = 1 String = MADAM Sample Output: Palindrome 
-#include<iostream> using namespace std; int main() 
-{ 
-	string a,b; 
-	cout<<"ENTER THE STRING =>";  cin>>a; 
-	for (int i=a.size()-1;i>=0;i--) 
-	{ 
-		b+=a[i];	
-	} 
-	if(a==b) 
-	cout<<"THE ENTERED WORD IS PALINDROME....";
-	else 
-	cout<<"THE ENTERED WORD IS NOT A PALINDROME...!!!";
-} 
 
-6)Develop  a program to print Right Triangle Star Pattern  Sample Input:: n = 5 Output:  
-  *  
-*	*  
-*	* *  
-*	* * *  
-output
-		#include <iostream>
-using namespace std;
-int main()
-{
-    int n = 5;
-for(int i=n; i>0; i--)
-    {
-for(int j=0; j<=n; j++)     
-	   {
-        if (j>=i)
-        {
-cout<<"*";
-        }
-        else
-        {
-cout<<" ";
-        }
-      }
-cout<<endl;
-    }
-    return 0;
-}	 
 7)Develop a program to print the below pattern?                                
 				1				
 			1		1			
@@ -188,37 +22,6 @@ output
 		cout<<"\n";
 	} 
 } 
-8)Develop  a program using function to calculate the simple interest. Suppose the customer is a senior citizen. He is being offered 12 percent rate of interest; for all other customers, the ROI is 10 percent. 
-Sample Input: 
-Enter the principal amount: 200000 
-Enter the no of years:  3 
-Is customer senior citizen (y/n): n Sample Output: 
-Interest: 60000 
-
-Output
-#include<iostream>
-using namespace std;
-int main()
-{
-int p,y,c,i,a;
-cout<<"enter the principle amount => ";
-cin>>p;
-cout<<"\nenter the no of years =>";
-cin>>y;
-cout<<"\n1.senior citizen\n2.not senior citizen";
-cout<<"\n enter the choise =>";
-cin>>c;
-switch(c)
-{
-case 1:
-a=p*y*12/100;
-cout<<"\n the simple interest for senior citizen is => "<<a;
-break;
-case 2:
-i=p*y*10/100;
-cout<<"\nthe simple interest for normal citizen is => "<<i;
-}
-} 
 9)Build a class series and use member function input() for getting a number and member function  show() to print fibonacci series of a number. 
 
 output
@@ -240,25 +43,6 @@ output
 }; int main() 
 { 
 	series s1;  	s1.input();  	s1.show(); 
-} 
-10)Develop a program to print the below pattern 
-1 
-2	2 
-3	3  3
-4	4   4   4 
-output
-#include<iostream> using namespace std; int main() 
-{ 
-	int row,i,j; 
-	cout<<"ENTER THE NUMBER OF ROWS =>";  	cin>>row; 
-	for(i=0;i<row;i++) 
-{ 
-		for(j=0;j<=i;j++) 
-		{ 
-			cout<<i+1;
-		} 
-		cout<<"\n";
-	} 
 } 
 11)Build  a C++ program to print the below pattern 
 1 
@@ -288,212 +72,6 @@ Output
 	cout<<"ENTER THE MAXIMUM NUMBER =>";  	cin>>n; 
 	printPattern(n);  	return 0; 
 } 
-12)Develop a C++ program to generate Electricity bill. Create a class with the following members: 
-Consumer no., consumer name, previous month reading, current month reading, type of EB connection (i.e domestic or commercial).  
-
-Compute the bill amount using the following tariff. If the type of the EB connection is domestic,  calculate the amount to be paid as follows:  
-First 100 units - Rs. 1 per unit  
-101-200 units - Rs. 2.50 per unit  
-201 -500 units - Rs. 4 per unit  
-> 501 units - Rs. 6 per unit 
-
- If the type of the EB connection is commercial, calculate the amount to be paid as follows:  First 100 units - Rs. 2 per unit  
-101-200 units - Rs. 4.50 per unit  
-201 -500 units - Rs. 6 per unit  
-> 501 units - Rs. 7 per unit 
-
-output
-#include<iostream> using namespace std; class ebill
-{ 
-	public: 
-		int cons_no,pre_read,cur_read,eb_type,usedunits;  		string cons_name; 
-float amount=0;
-	void input(void);  	void calculation();  		void display(); 
-}; 
-void ebill::input() 
-{ 
-	cout<<"ENTER CUSTOMER NUMBER =>";  	cin>>cons_no; 
-	cout<<"\nENTER CONSUMER NAME =>";  	cin>>cons_name; 
-	cout<<"\nENTER THE PREVIOUS MONTH UNITS READING =>";  	cin>>pre_read; 
-	cout<<"\nENTER THE CURRENT MONTH UNITS READING =>";  	cin>>cur_read; 
-	cout<<"\nENTER THE EB TYPE\n1 - domestic\n2 - commercial\n";  	cin>>eb_type; 
-} 
-void ebill::calculation() 
-{ 
-	if(eb_type==1) 
-	{ 
-		usedunits=cur_read-pre_read;  		if(usedunits<=100)  			amount=(usedunits*1); 
-		if(usedunits>100&&usedunits<=200)  			amount=100+((usedunits-100)*2.5);  		if(usedunits>200&&usedunits<=500)  			amount=350+((usedunits-200)*4);  		if(usedunits>500)  	amount=1550+((usedunits-500)*7); 
-} if(eb_type==2) 
-	{ 
-		usedunits=cur_read-pre_read;  		if(usedunits<=100)  			amount=(usedunits*2); 
-		if(usedunits>100&&usedunits<=200)  			amount=200+((usedunits-100)*4.5);  		if(usedunits>200&&usedunits<=500)  			amount=650+((usedunits-200)*6);  		if(usedunits>500) 
-			amount=2450+((usedunits-500)*7); 
-	} 	
-} 
-void ebill::display() 
-{ 
-	cout<<"YOUR EBILL AMOUNT IS => "<<amount;
-} int main() 
-{ 
-	ebill e1;  	e1.input();  	e1.calculation();  	e1.display(); 
-} 
-13)Develop a C++ program to perform different arithmetic operations such as addition, subtraction, division, modulus and multiplication switch case 
-
-output
-#include<iostream>
-using namespace std; int main() 
-{ 
-	int a,b,input;  	float div; 
-	cout<<"CALCULATOR\n\n1 - add\n2 - substract\n3 - multiplication\n4 - division\n5 
-- modulas\n";
-	cout<<"ENTER THE OPERATION =>";  	cin>>input;  	cout<<"\nNUMBER 1 : ";  	cin>>a; 
-	cout<<"\nNUMBER2 : ";  	cin>>b; 
-	switch(input) 
-	{ 
-		case 1: 
-			cout<<a<<" + "<<b<<" = "<<(a+b);
-			break;  		case 2: 
-			cout<<a<<" - "<<b<<" = "<<(a-b);  			break;  		case 3: 
-			cout<<a<<" x "<<b<<" = "<<(a*b);
-			break;  		case 4: 
-			div=(float)a/(float)b;  			cout<<a<<" / "<<b<<" = "<<div;  			break;  		case 5: 
-			cout<<a<<" % "<<b<<" = "<<(a%b);
-			break;
-		default: 
-			cout<<"ENTERED OPERATION IS INVALID ...!!";
-} 
-} 
-14)Developa Employee class with Emp_name, Emp_id, Address, Mail_id, Mobile_no as members. Inherit the classes, Programmer, Assistant Professor, Associate Professor and Professor from employee class. Add Basic Pay (BP) as the member of all the inherited classes with 97% of BP as DA, 10 % of BP as HRA, 12% of BP as PF, 0.1% of BP for staff club fund. Generate pay slips for the employees with their gross and net salary. 
-
-output
-#include<iostream> using namespace std; class employee 
-{ 
-	public: 
-	string Emp_name,Mail_id,Address,Emp_id,Mobile_no;  	double BP,GP,NP,DA,HRA,PF,CF;  	void input() 
-	{ 
-		cout<<"\n\nEnter Name of the Employee : ";  		cin>>Emp_name; 
-		cout<<"\nEnter Address of the Employee : "; 
-		cin>>Address;
-		cout<<"\nEnter ID of the Employee : "; 
-		cin>>Emp_id;
-		cout<<"\nEnter Mobile Number : ";  		cin>>Mobile_no; 
-		cout<<"\nEnter E-Mail ID of the Employee : "; 
-		cin>>Mail_id;
-	} 
-	void display() 
-	{ 
-		cout<<"\nNAME => "<<Emp_name;  		cout<<"\nADDRESS => "<<Address;  		cout<<"\nEMPLOYEE ID => "<<Emp_id;  		cout<<"\nMOBILE NUMBER => "<<Mobile_no;  		cout<<"\nMAIL ID => "<<Mail_id<<"\n"; 
-	} 
-	void calculation() 
-	{ 
-		DA=BP*0.97;
-		HRA=BP*0.10;
-		PF=BP*0.12;
-		CF=BP*0.01;
-		GP=BP+DA+HRA+PF;
-		NP=GP-PF-CF;	
-	} 
-	void basicpaydisplay() 
-	{ 
-		cout<<"\nBASIC PAY => "<<BP;  		cout<<"\nDEARNESS ALLOWANCE => "<<DA;  		cout<<"\nHOUSE RENT ALLOWENCE => "<<HRA;  		cout<<"\nPROVIDENT FUND => "<<PF;  		cout<<"\nCLUB FUND => "<<CF;  		cout<<"\nGROSS PAY => "<<GP;  		cout<<"\nNET PAY => "<<NP; 
-	} 
-}; 
-class programmer:public employee 
-{ 
-	public: 
-double bp1; 	 void proginput() 
-{ 
-		cout<<"\nENTER THE BASIC PAY OF THE PROGRAMMER =>";
-		cin>>BP;
-		cout<<"\n=======================\nPROGRAMMER	PAYMENT 
-SLIP\n=======================";
-	} 	
-}; 
-class assistantprof:public employee 
-{ 
-	public: 
-	void assprofinput() 
-	{ 
-		cout<<"\nENTER THE BASIC PAY OF THE ASSISTANT PROFESSOR =>
-"; 
-		cin>>BP;
-		cout<<"\n================================\nASSISTANT PROFESSOR PAYMENT SLIP\n================================\n";
-	} 	
-}; 
-class assosciateprof:public employee 
-{ 
-	public: 
-	void assoprofinput() 
-	{ 
-		cout<<"\nENTER THE BASIC PAY OF THE ASSOCIATE PROFESSOR =>
-"; 
-		cin>>BP;
-		cout<<"\n================================\nASSOCIATE PROFESSOR PAYMENT SLIP\n================================\n";
-	} 	
-}; 
-class professor:public employee 
-{ 
-	public: 
-	void profinput() 
-	{ 
-		cout<<"\nENTER THE BASIC PAY OF THE PROFESSOR =>";
-		cin>>BP;
-		cout<<"\n======================\nPROFESSOR	PAYMENT 
-SLIP\n======================\n";
-	} 	
-}; int main() 
-{ 
-	programmer p1;  	p1.input();  	p1.display();  	p1.proginput();  	p1.calculation();  	p1.basicpaydisplay();  	assistantprof a1;  	a1.input();  	a1.display();  	a1.assprofinput();  	a1.calculation();  	a1.basicpaydisplay();  	assosciateprof a2;  	a2.input();  	a2.display();  	a2.assoprofinput();  	a2.calculation(); a2.basicpaydisplay(); professor p2; p2.input(); 
-	p2.display();  	p2.profinput();  	p2.calculation();  	p2.basicpaydisplay();  
-} 
-15)Develop  a class in C++ program To compute a record of 10 students, Read the name, Regno ,mark1,mark2,mark3 of the student, calculate the average marks  and grade for to display it. 
-Test Case Average >90  , Grade – S 
-                 Average >80  , Grade A 
-                 Average >70, Grade  C
-                 Average >60  Grade  D 
-                 Average >50  Grade E 
-               Average less than 50 Grade F 
-Output
-#include<iostream> using namespace std; class student 
-{ 
-	public:  	string name;  	int regno,mark1,mark2,mark3;  	float avg; 	
-	void input();  	void calculation();  	void display(); 
-}; 
-void student::input() 
-{ 
-	cout<<"\n\nENTER THE STUDENT NAME =>";  	cin>>name; 
-	cout<<"\nENTER THE REGISTER NUMBER =>";  	cin>>regno;  	cout<<"\nMARK 1 => ";  	cin>>mark1;  	cout<<"\nMARK 2 => ";  	cin>>mark2;  	cout<<"\nMARK 3 => ";  	cin>>mark3; 
-} 
-void student::calculation() 
-{ 
-	avg=(mark1+mark2+mark3)/3;
-} 
-void student::display() 
-{ 
-	cout<<"\nAVERAGE SCORE IS => "<<avg;  	if(avg>90)  	cout<<"\nS GRADE";  	if(avg>80 &&avg<90)  	cout<<"\nA GRADE";  	if(avg>70 &&avg<80)  	cout<<"\nC GRADE";  	if(avg>60 &&avg<70)  	cout<<"\nD GRADE";  	if(avg>50 &&avg<60)  	cout<<"\nE GRADE";  	if(avg<50) 
-cout<<"\nF GRADE";
-} int main() 
-{ 
-	int number;  	student s[20]; 
-	cout<<"ENTER THE NUMBER OF STUDENT ENTRIES =>";  	cin>>number; 
-	for(int i=0;i<number;i++) 
-	{ 
-		s[i].input();  		s[i].calculation();  		s[i].display(); 
-	} 
-} 
-16)Develop   a Program in C++ to calculate income tax for the employee based on the following condition 
-1.	if taxableincome<=60000,  tax=0; 
-2.	if taxableincome>60000 and taxableincome<=150000,     tax= taxableincome *0.05; 
-3.	if taxableincome>150000 or taxableincome<=500000) tax= taxableincome *0.1;
-else tax=tableinc*0.15; 
-output
-#include<iostream> using namespace std; int main() 
-{ 
-	int income,tax;  	cout<<"ENTER THE INCOME => ";  	cin>>income;  	if(income<60000)  	tax=0; 
-	if(income>60000 && income<150000)  	tax=income*0.05; 
-	if(income>150000 && income<500000)  	tax=income*0.1;  	if(income>500000)  	tax=income*0.15; 
-	cout<<"YOUR INCOME TAX FOR THE ENTERED INCOME IS => "<<tax;
 } 
 17)Develop   a Program in C++ to detect special characters present or not..
 // Program to detect special character in a string. 
@@ -525,8 +103,16 @@ int main()
   {
     cout<<"There is no special character in the string.\n";
   }
-  return 0;}
+  return 0;
+}
+
+
+
+
+
 1.	Write a program in C++ to calculate the area of circle, rectangle, square and triangle using function overloading.
+
+
 programme
 #include<iostream>
 using namespace std;
@@ -577,11 +163,17 @@ Area of square is16
 Area of rectangle is 24
 Area of circle is 113.04
 Area of triangle is 4
+
+
 2.	Write a C++ program to swap two number using call by value mechanism
+
+
 programme
 #include<iostream>
 using namespace std;
+
 void swap(int,int);
+
 int main()
 {
         int a,b;
@@ -596,6 +188,8 @@ int main()
 
         cout<<"\nOutside Function After Swapping, Value of :: \n\tA = "<<a<<"\tB = "<<b<<"\n";
 }
+
+
 void swap(int a,int b)
 {
         int c;
@@ -606,19 +200,28 @@ void swap(int a,int b)
 }
 Output
 Enter Value Of A :: 23
+
 Enter Value of B :: 30
+
 Before Swapping, Value of ::
         A = 23  B = 30
+
 Inside Function After Swapping, Value of ::
         A = 30  B = 23
+
 Outside Function After Swapping, Value of ::
         A = 23  B = 30
+
 3.	Create a class Vector with a single dimensional array, and size as data members. Use friend functions to read and print the member values. Write a main method to demonstrate the Vector class.
 4.	Create a class Employee with members empno , name , deptname and designation as private variables. Create a friend function List Dept Wise to list all employees for a given dept.
+
+
 programme
 #include <windows.h>
 #include <iostream>
+
 using namespace std;
+
 class employee
 {
 	int   emp_number;
@@ -697,118 +300,6 @@ Employee DA        :  67
 Income Tax         :  66
 Net Salary         :  34445
 
-1.	Write a program to print Right Triangle Star Pattern(Day 2)
-
-programme
-#include <stdio.h>  
-  
-int main()  
-{  
-    int n,m=1;  
-    printf("Enter the number of rows");  
-    scanf("%d",&n);  
-    for(int i=n;i>=1;i--)  
-    {  
-        for(int j=1;j<=i-1;j++)  
-        {  
-          printf(" ");  
-        }  
-        for(int k=1;k<=m;k++)  
-        {  
-            printf("*");  
-        }  
-        printf("\n");  
-        m++;  
-    }  
-    return 0;  
-
-
-output
-    Sample Input::  n = 5
-Output: 
-           * 
-         * * 
-       * * * 
-     * * * * 
-  * * * * *
-8. Write a program to convert Decimal number equivalent to Binary number and octal numbers?
-
-programme
-#include <iostream>
-using namespace std;
-
-int main()
-
-{
-
-	int dec, bin[16], i = 0, j = 0;	//dec and bin to store number and ints binary equivalent and i&j are	//for index maintaining 
-
-	cout << "Enter a decimal number\n";
-
-	cin >> dec;
-
-	while (dec > 0)	//calculating the binary equivalent and storing it in the array
-
-	{
-		bin[i] = dec % 2;
-
-		dec = dec / 2;
-
-		++i;
-	}
-
-	cout << "Binary Equivalent:";	//printing the array in reverse order
-
-	for (j = i - 1; j >= 0; --j)
-
-		cout << bin[j];
-
-	return 0;
-
-}
-output
-Enter a decimal number
-15
-Binary Equivalent:1111
-								
-Sample Input:
-Decimal Number: 15
-Sample Output:
-Binary Number = 1111
-Octal = 17
-10. Write a program to print hollow square and full square symbol pattern? Get the different symbol for hollow square and full square as input from the user.
-
-
-programme
-#include<stdio.h>
-
-int main(){
-    int side, i, j;
-    
-    printf("Enter side of square\n");
-    scanf("%d", &side);
-    
-    /* Row iterator for loop */
-    for(i = 0; i < side; i++){
-     /* Column iterator for loop */
-        for(j = 0; j < side; j++){
-            /* Check if currely position is a boundary position */
-            if(i==0 || i==side-1 || j==0 || j==side-1)
-                printf("*");
-            else 
-                printf(" ");
-        }
-        printf("\n");
-    }
-    return 0;
-}
-Output
-Enter side of square
-4
-****
-*    *
-*    *
-****
 
 11. Program to Find Even Sum of Fibonacci Series Till number N?(day 2)
 
@@ -850,66 +341,7 @@ Sample Input: n = 4
 Sample Output: 33
 (N = 4, So here the fibonacci series will be produced from 0th term till 8th term: 0, 1, 1, 2, 3, 5, 8, 13, 21
 Sum of numbers at even indexes = 0 + 1 + 3 + 8 + 21 = 33)
-12. Write a program to enter the marks of a student in four subjects. Then calculate the total and aggregate, display the grade obtained by the student. If the student scores an aggregate greater than 75%, then the grade is Distinction. If aggregate is 60>= and <75, then the grade is First Division. If aggregate is 50 >= and <60, then the grade is Second Division. If aggregate is 40>= and <50, then the grade is Third Division. Else the grade is Fail.
 
-programme
-#include<iostream>
-using namespace std;
-int main()
-{
-	int english, chemistry, computers, physics, maths; 
-    float total, average, percentage;
-cout << "Please Enter the marks of five subjects: \n";
-    cin >> english >> chemistry >> computers >> physics >> maths;
- total = english + chemistry + computers + physics + maths;
-    average = total / 5;
-    percentage = (total / (500)) * 100;
-  cout << "\nTotal Marks      = " << total;
-    cout << "\nAverage Marks    = " << average;
-    cout << "\nMarks Percentage = " << percentage;
-      if(percentage >= 90)    {
-    	cout << "\nGrade A";
-	}
-	else if(percentage >= 80)    {
-    	cout << "\nGrade B";
-	}
-	else if(percentage >= 70)    {
-    	cout << "\nGrade C";
-	}
-	else if(percentage >= 60)    {
-    	cout << "\nGrade D";
-	}
-	else if(percentage >= 40)    {
-    	cout << "\nGrade E";
-	}
-	else {
-    	cout << "\nFail";
-	} 
-	
- 	return 0;
-}
-Output
-Please Enter the marks of five subjects:
-78
-78
-90
-89
-78
-
-Total Marks      = 413
-Average Marks    = 82.6
-Marks Percentage = 82.6
-Grade B
-
-
-Sample Input & Output:
-Enter the marks in python: 90
-Enter the marks in c programming: 91
-Enter the marks in Mathematics: 92
-Enter the marks in Physics: 93
-Total= 366
-Aggregate = 91.5
-DISTINCTION
 13. Write a program for matrix addition?
 
 programme
@@ -1358,59 +790,6 @@ enter B matrix element:5
 ADDITION OF MATRIX A&B :
 5
 4342193
-5. Write a program to print rectangle symbol pattern. Get the symbol as input from user
-Code:
-#include <iostream>
-using namespace std;
-int main() {
-    int l, w, i, j;
-    cout << "Enter the length: ";
-    cin >> l;
-    cout << "Enter the width: ";
-    cin >> w;
-    cout << endl;
-    for (i = 1; i <= w; i++) {
-        for (j = 1; j <= l; j++) {
-            cout << "*";
-        }
-        cout << endl;
-    }
-return 0;
-}
-Output:
-Enter the length: 3
-Enter the width: 4
-
-***
-***
-***
-6. Write a program to calculate tax given the following conditions:
-If income is less than or equal to 1,50,000 then no tax
-If taxable income is 1,50,001 – 3,00,000 the charge 10% tax
-If taxable income is 3,00,001 – 5,00,000 the charge 20% tax
-If taxable income is above 5,00,001 then charge 30% tax
-Code:
-#include<iostream>
-using namespace std;
-int main()
-{
-	int income,tax;
-	cout<<" enter the income of the person :";
-	cin>>income;
-	if (income<=150000)
-	  tax = 0;
-	else if(income>=150001 && income<=300000)
-	  tax = income*0.1;
-	else if(income>=300001 && income<=500000)
-	  tax = income*0.2;
-	else
-	  tax=income*0.3;
-	cout<<" the income tax is :"<<tax<<endl;
-	return 0;
-}
-Output:
-enter the income of the person :6000
- the income tax is :0
 7.Write a program that would sort a list of names in alphabetical order Ascending or Descending, choice get from the user?
 Code:
 #include<iostream>
@@ -1460,82 +839,6 @@ Ball
 Cat
 Dad
 Red
-8. Write a program to enter the marks of a student in four subjects. Then calculate the total and aggregate, display the grade obtained by the student. If the student scores an aggregate greater than 75%, then the grade is Distinction. If aggregate is 60>= and <75, then the grade is First Division. If aggregate is 50 >= and <60, then the grade is Second Division. If aggregate is 40>= and <50, then the grade is Third Division. Else the grade is Fail.
-Code:
-#include <iostream>
-using namespace std;
-int main(){
-float a,b,c,d,tot;
- float agg;
-cout<<"Enter the marks in python ";
-cin>>a;
-cout<<"Enter the marks in c programming:";
-cin>>b;
-cout<<"Enter the marks in Mathematics:";
-cin>>c;
-cout<<"Enter the marks in Physics:";
-cin>>d;
-tot=a+b+c+d;
-cout<<"TOTAL : " << tot;
-cout<<"\n";
-agg=tot/4;
-cout<<"AGGREGATE : " <<agg;
-cout<<"\n";
- if (agg>=75){
-cout<<"DISTINCTION";
- }
- else if (agg>=60 &&agg<75){
-cout<<"FIRST DIVISION";
- }
- else if (agg>= 50 &&agg<60){
-cout<<"SECOND DIVISION";
- }
- else if (agg>= 40 &&agg<50){
-cout<<"THIRD DIVISION";
- }
- else if (agg< 40){
-cout<<"FAIL";
- }
- else {
-cout<<"invalid input";
- }
- return 0;
-}
-Output:
-Enter the marks in python 56
-Enter the marks in c programming:67
-Enter the marks in Mathematics:78
-Enter the marks in Physics:89
-TOTAL : 290
-AGGREGATE : 72.5
-FIRST DIVISION
-9. Find the factorial of n?
-Code:
-#include <iostream>
-using namespace std;
-
-int main() {
-    int n;
-    long factorial = 1.0;
-
-    cout << "Enter a positive integer: ";
-    cin >> n;
-
-    if (n < 0)
-        cout << "Error! Factorial of a negative number doesn't exist.";
-    
-    else {
-        for(int i = 1; i <= n; ++i) {
-            factorial *= i;
-        }
-        cout << "Factorial of " << n << " = " << factorial;    
-    }
-
-    return 0;
-}
-Output:
-Enter a positive integer: 5
-Factorial of 5 = 120
 10. Write a Program to create a list of all numbers in a range which are perfect squares and the sum of the digits of the number is less than 10.
 Code:# include<iostream>
 #include<math.h>
@@ -1559,60 +862,6 @@ Output:
 Enter a range:3
 19
 Perfect numbers between 3 and 19 are: 4 9 16
-11. Write a Program to Find the Nth Largest Number in a array
-Code:
-#include <iostream>
-using namespace std;
-int main() {
-int i, n;
-  float arr[100];
- cout << "Enter total number of elements(1 to 100): ";
-  cin >> n;
-  cout << endl;
-   for(i = 0; i < n; ++i) {
-    cout << "Enter Number " << i + 1 << " : ";
-    cin >> arr[i];
-  }
-  for(i = 1;i < n; ++i) {
-  if(arr[0] < arr[i])
-      arr[0] = arr[i];
-  }
-cout << endl << "Largest element = " << arr[0];
-return 0;
-}
-Output: Enter total number of elements(1 to 100): 4
-
-Enter Number 1 : 34
-Enter Number 2 : 67
-Enter Number 3 : 78
-Enter Number 4 : 56
-12. Write a program to find the sum of digits of N digit number (sum should be single digit)
-Code:
-#include <iostream>  
-using namespace std;  
-int main()  
-{  
-int n,sum=0,m,i; 
-cout<<"Enter how many numbers:";
-cin>>i;   
-cout<<"Enter n number: ";    
-cin>>n;    
-while(n>0)    
-{    
-m=n%10;    
-sum=sum+m;    
-n=n/10;    
-}    
-cout<<"Sum is= "<<sum<<endl;    
-return 0;  
-}
-Output:
-Enter how many numbers:
-2
-1st num:2
-2nd num:4
-Sum:6
-
 1. Problem Statement: The packing department of a television vision set manufacturer has to prepare a requisition note listing the number of different boxes required for the different TV models that it has received from the production department. The list prepared has to be forwarded to the stores department so that the required boxes are issued to the packing department. The category and the number of boxes required for each type of TV model is given as follows: Model types are TV-LCD 17,22,26,32,37 and box types are 1,2,3,4,2 respectively. 
 Analysis:
 Output 
@@ -1868,39 +1117,6 @@ cout<<endl;
 
     return 0;
 }
-QUESTION 7:
-10.Problem Statement : A child is running up a staircase with n steps and can hop either 1 step, 2 steps, or 3 steps at a time. Implement a method to count how many possible ways the child can run up the stairs.
-Examples: 
-Input : 4
-Output : 7
-
-OUTPUT
-#include<iostream>
-using namespace std;
-int count_Ways(int n)
-{
-   if(n<0)
-   {
-      return 0;
-   }
-   else if(n==0)
-   {
-      return 1;
-   }
-   else
-   {
-      return count_Ways(n-1) +count_Ways(n-2) + count_Ways(n-3);
-   }
-}
-int main()
-{
-   int n;
-cout<<"Enter number of stairs: ";
-cin>>n;
-cout<<"There are "<<count_Ways(n)<<"  possible ways the child can run up thestairs."<<endl;
-   return 0;
-}
-
 QUESTION 8:
 12.Write a program to print number of factors and to print nth factor of the given number.
 Sample Input:
@@ -1937,92 +1153,6 @@ cout<<"Number of factors ="<<count;
 cout<<"nth factor  "<<n,num,temp;
 }
 
-
-
-QUESTION 9:
-13.Write a Program to Remove the Duplicate Items from a array.
-Sample Input:
-Enter the number of elements in array:7
-Enter element1:10
-Enter element2:20
-Enter element3:20
-Enter element4:30
-Enter element5:40
-Enter element6:40
-Enter element7:50
-Sample Output:
-Non-duplicate items:
-[10, 20, 30, 40, 50]
-
-
-
-
-OUTPUT
-#include<iostream>
-using namespace std;
-int main ()
-{
-    int A[10], B[10], n, i, j, k = 0;
-cout<< "Enter size of array : ";
-cin>>n;
-cout<< "Enter elements of array : ";
-    for (i = 0; i< n; i++)
-cin>> A[i];
-    for (i = 0; i< n; i++)
-    {
-        for (j = 0; j < k; j++)
-        {
-            if (A[i] == B[j])
-break;
-        }
-        if (j == k)
-        {
-            B[k] = A[i];
-            k++;
-        }
-    }
-cout<< "Repeated elements after deletion : ";
-    for (i = 0; i< k; i++)
-cout<< B[i] << " ";
-    return 0;
-}
-
-
-
-QUESTION 10:
-
-14.Program to find whether the given number is Armstrong number or not
-Sample Input:
-Enter number : 153
-Sample Output:
-Given number is Armstrong number
-
-OUTPUT
-#include <iostream>
-using namespace std;
-
-int main() {
-    int num, originalNum, remainder, result = 0;
-cout<< "Enter a three-digit integer: ";
-cin>>num;
-originalNum = num;
-
-    while (originalNum != 0) {
-
-        remainder = originalNum % 10;
-
-        result += remainder * remainder * remainder;
-
-
-originalNum /= 10;
-    }
-
-    if (result == num)
-cout<<num<< " is an Armstrong number.";
-    else 
-cout<<num<< " is not an Armstrong number.";
-
-    return 0;
 
 
 1. Read the salary and deductions from user and calculate the  Gross Pay, net salary and income tax with various income tax slabs. The salary class will read all details then the deduction class and incometax class will inherit the salary class to perform the above.  
@@ -2260,218 +1390,6 @@ minimum marks : 50
 maximum marks : 100
 marks obtained in english : 89
 
-
- 
-4.	Find the max of an integral data set. The program will ask the user to input the number of data values in the set and each value. The program prints on screen a pointer that points to the max value. 
-
-CODE:
-#include<iostream>
-using namespace std;
-int main()
-{
-  int n;int i; int max=0;
-  cout<<"Enter number of values:";
-  cin>>n;
-  cout<<"Enter values in array:\n";
-  int arr[n];
-  for(i=0;i<n;i++) {
-  cin>>arr[i];
-  }
-   for(int u=0;u<=n;u++){
-   if (arr[u]>max)
-     max=arr[u];
-  }
-  int *pointer= &max;
-  cout<<"Largest integer value in the array is "<<*pointer;
-  return 0;
-}
-
-OUTPUT:
-
-Enter number of values:4
-Enter values in array:
-23
-56
-87
-56
-Largest integer value in the array is 87
-     
- 
- 
-5.	The user to enter integers as inputs to be stored in the variables 'a' and 'b' respectively. There are also two integer pointers named ptrA and ptrB. Assign the values of 'a' and 'b' to ptrA and ptrB respectively, and display them. 
- 
-Code : 
- 
-#include<iostream> using namespace std; 
-void justdisplay(int*a,int*b) 
-{ 
- 	cout<<"entered A => "<<*a;  	cout<<"\nentered B => "<<*b; 
-} 
-int main() 
-{ 
- 	int a,b;  	cout<<"ENTER A => ";  	cin>>a; 
- 	cout<<"ENTER B => ";  	cin>>b; 
- 	justdisplay(&a,&b); 
-}
-OUTPUT:
-Enter number of values:3
-Enter values in array:
-45
-67
-87
-Largest integer value in the array is 87
-
-6.	Program to read and display the Names, Roll No., Marks and grades of 3 students who have appeared in the examination. Declare the class of name, Roll No. and grade. Create an array of objects to read and display the contents. 
-CODE:
- 
-#include<iostream> using namespace std; class name 
-{ 
- 	public: 
-  string name;   void getname() 
- 	 	{ 
- 	 	 	cout<<"\nenter the name : "; 
- 	 	 	cin>>name; 
- 	 	} 
- 	 	void displaya() 
- 	 	{ 
- 	 	 	cout<<"\nname : "<<name; 
- 	 	} 
-}; class roll 
-{ 
- 	public:  	 	string r; 
- 	 	void getrn() 
- 	 	{ 
- 	 	 	cout<<"\nenter the roll no : "; 
- 	 	 	cin>>r; 
- 	 	} 
- 	 	void displayb() 
- 	 	{ 
- 	 	 	cout<<"\nroll no : "<<r; 
- 	 	} 
-}; 
-class grade:public name,public roll  
-{ 
- 	public:  	char g; 
- 	void getgra() 
- 	{ 
- 	 	cout<<"\nenter the grade : ";  	 	cin>>g; 
- 	} 
- 	void displayc() 
-{ 
-	 	cout<<"\ngrade : "<<g; 
-} 
-}; 
-int main() 
-{ 
- 	int n,i;  	grade d[10]; 
- 	cout<<"\nenter the no of students : ";  	cin>>n; 
- 	for(i=0;i<n;i++){  	 	d[i].getname();  	 	d[i].getrn();  	 	d[i].getgra(); 
- 	} 
- 	for(i=0;i<n;i++){  	 	d[i].displaya();  	 	d[i].displayb();  	 	d[i].displayc(); 
- 	} 
- 	return 0; 
-} 
-OUTPUT:
-Enter information of students:
-For roll number1,
-Enter name: akash
-Enter Grade: A
-
-For roll number2,
-Enter name: adithya
-Enter Grade: B
-
-For roll number3,
-Enter name: pallavi
-Enter Grade: A
-
-Displaying Information:
-
-Roll number: 1
-Name: akash
-Grade: A
-
-Roll number: 2
-Name: adithya
-Grade: B
-
-Roll number: 3
-Name: pallavi
-Grade: A
-
-7. Count the number of persons inside a bank, by increasing count whenever a person enters a bank, using an increment(++) operator overloading function, and decrease the count whenever a person leaves the bank using a decrement(--) operator overloading function inside a class. 
- 
-Code : 
- 
-#include<iostream> using namespace std; 
-class counter 
-{ 
-	 	public: 
-	 	 	int count; 
-	 	 	counter() 
-	 	 	{ 
-	 	 	 	count=0; 
-	 	 	} 
-	 	 	void operator++() 
-	 	 	{ 
-	 	 	 	count++; 
-	 	 	} 
-	 	 	void operator--() 
-	 	 	{ 
-	 	 	 	count--; 
-	 	 	} 
-	 	 	int display() 
-	 	 	{ 
-	 	 	 	return count; 
-	 	 	} 
-}; 
-int main() 
-{ 
-	 	counter c1; 
-	 	cout<<"\ninitial number of people => "<<c1.display(); 
-	 	++c1; 
-	 	++c1; 
- 	++c1;  	++c1; 
-	 	cout<<"\npresent number => "<<c1.display(); 
-	 	--c1; 
-	 	cout<<"\nsome of them leave => "<<c1.display(); 
-} 
-OUTPUT:
-initial number of people => 0
-present number => 4
-some of them leave => 3
-
- 
-8. Suppose you have a Piggie Bank with an initial amount of Rs.500 and you have to add some more amount to it. Create a class 'AddAmount' with a data member named 'amount' with an initial value of Rs.500. Now make two constructors of this class as follows: 
-i - without any parameter - no amount will be added to the Piggie Bank iki - having a parameter which is the amount that will be added to the Piggie Bank Create an object of the 'AddAmount' class and display the final amount in the Piggie Bank. 
-Code: 
- 
-#include<iostream> using namespace std; int sav=0; 
-class addamount 
-{ 
- 	public:  	 	int amount=500;  	 	addamount() 
- 	 	{ 
- 	 	 	 
- 	 	} 
- 	 	addamount(int a) 
- 	 	{  	 	 	sav=a; 
- 	 	 	sav+=amount; 
- 	 	} 
- 	 	void display() 
- 	 	{ 
- 	 	 	cout<<"\nyour savings in a piggy bank : "<<sav; 
- 	 	} 
-}; 
-int main() 
-{ 
- 	int amt; 
- 	cout<<"\nenter the amount to add in a piggy bank : ";  	cin>>amt;  	addamount s,d(amt);  	s.display(); 
- 	return 0; 
-}  
-OUTPUT:
-enter the amount to add in a piggy bank : 100
-your savings in a piggy bank : 600
-
 9. Write a program to print the below pattern?                                  	 	 	 	1  	 	 	 
 	 	 	 	1 	 	1 	 	 	 
 	 	 	1  	2  	1 	 	 
@@ -2485,7 +1403,6 @@ Code :
  
 int main() 
 {     int r, c = 1; 
- 
     cout << "Enter number of rows: "; 
     cin >> r; 
  
@@ -2541,42 +1458,6 @@ perfect numbers :
 6
 28
 496
-11.  Write a program to print all the composite numbers between a and b? 
-Sample Input: 
-A	= 12 
-B	= 19 
-Sample Output 14, 15, 16, 18 Test cases: 
-i. 	A = 11, B = 11 ii. A = 20, B = 10 iii. A = 0, B = 0 iv. A = -5, B = 5 
-v. A = 7, B = -12 
- 
-Code : 
- 
-#include<iostream> using namespace std; int main() 
-{ 
- 	int start,end,i,j;  	cout<<"\nENTER THE STARTING => "; 
- 	cin>>start; 
- 	cout<<"\nENTER THE ENDING => "; 
- 	cin>>end; 
- 	for(i=start+1;i<end;i++) 
- 	{ 
- 	 int count=0;  	 for(j=1;j<=i;j++) 
- 	 { 
- 	  	if(i%j==0)  	  	count++; 
- 	 } 
- 	 if(count==2)  	 continue; 
- 	 else 
- 	 { 
- 	  	cout<<i<<"\n"; 
- 	 } 
- 	} 
- 	 
- 	 
-} 
-OUTPUT:
-  ENTER THE STARTING => 4
-                ENTER THE ENDING => 9
-       6
-      8
 12. Write a program to read the numbers until -1 is encountered. Find the average of positive numbers and negative numbers entered by user.  
 Sample Input: 
 Enter -1 to exit… 
@@ -2625,16 +1506,7 @@ negative average : -5.66667
 Array of elements = {16, 18, 27, 16, 23, 21, 19} Sample Output: 
 	 	Mean = 20 
 Median = 19 
-Mode = 16 Test cases: 
-1.	Array of elements = {26, 28, 37, 26, 33, 31, 29} 
-2.	Array of elements = {1.6, 1.8, 2.7, 1.6, 2.3, 2.1, .19} 
-3.	Array of elements = {0, 160, 180, 270, 160, 230, 210, 190, 0} 
-4.	Array of elements = {200, 180, 180, 270, 160, 270, 270, 190, 200} 
-5.	Array of elements = {100, 100, 100, 100, 100, 100, 100, 100, 100} 
- 
-Code: 
- 
- 
+Mode = 16 Test 
 #include<iostream> using namespace std; int main() 
 { 
  	int a[50],c=0,i,n,c1,n1,j,k,b[10],re=0,r,max;  	float mean=0,median=0; 
@@ -2672,71 +1544,2591 @@ Code:
 } 
 OUTPUT:
 enter the no of elements in an array : 4
-
 enter the element 1 : 23
-
 enter the element 2 : 5
-
 enter the element 3 : 7
-
 enter the element 4 : 7
 
 mean : 10.5
 median : 6
 mode : 7
- 
-14. Find the number of factors for the given number (DAY-3) Sample Input: 
-Given number: 100 Sample Output: 
-Number of factors = 9 Test cases: 
-i. 343 ii. 1080 
-iii.	-243 
-iv.	101010 
-v.	0 
-Code : 
- 
-#include<iostream> using namespace std; int main() 
-{ 
- 	int n,i,j,k;  	cout<<"\nenter the number : "; 
- 	cin>>n; 
- 	for(i=1;i<n;i++){ 
- 	 	if(n%i==0){ 
- 	 	 	k++; 
-}
-}
-cout<<"\nnumber of factors : "<<k; return 0; 
-}  
-OUTPUT:
-enter the number : 12
-
-number of factors : 6
-
-15. Write a program to check if a given year is leap year or not. If it is leap year then print the next leap year, if it is non-leap year then print the previous leap year. 
- 
-Sample Input: 
-Enter Date : 1947 Sample Output: 
-Given year is Non Leap Year 
-Previous Leap Year: 1944 Test cases: 
-i. 19.47 ii. 1936 
-iii.	0 
-iv.	2000 v. -1428 
- 
-Code: 
+1)Develop a program to check the entered user name is valid or not. Get both the inputs from the user. 
 #include<iostream>
 using namespace std;
-int main() {
- int year;
-cout<<"Enter year : ";
-cin>>year;
-if(year==0)
- cout<<"invalid input!!";
-else if(year % 400 == 0)
- cout << year << " is a Leap Year";
- else if(year % 4 == 0 && year % 100 != 0)
- cout << year << " is a Leap Year";
- else
- cout << year << " is not a Leap Year";
- return 0;
+int main(){
+	string a,b;
+	cout<<"Enter:";
+	cin>>a;
+	cout<<"Re Enter:";
+	cin>>b;
+	if(a==b){
+		cout<<"valid";
+	}
+	else{
+		cout<<"not valid";
+	}}
+2) 4)Develop  a program to find whether the person is eligible for vote or not. And if that particular person is not eligible, then print how many years are left to be eligible.  
+#include<iostream>
+using namespace std;
+int main(){
+	int a,b;
+	cout<<"Enter:";
+	cin>>a;
+	if(a>=18){
+		cout<<"Elgible";}
+	else{
+		b=18-a;
+		cout<<b;}}
+3)Build a program to reverse a number using loop?
+#include<iostream>
+using namespace std;
+int main(){
+	int a,n,b=0,c,d;
+	cout<<"Enter:";
+	cin>>a;
+	n=c;
+	while(a!=0){
+		d=a%10;
+		b=(b*10)+d;
+		a=a/10;}
+	cout<<b;}
+4)Develop  a program using function to calculate the simple interest. Suppose the customer is a senior citizen. He is being offered 12 percent rate of interest; for all other customers, the ROI is 10 percent. 
+#include<iostream>
+using namespace std;
+int main(){
+	int a,b,c,d;
+	cout<<"Enter the principal amount:";
+	cin>>a;
+	cout<<"Enter the no of years: ";
+	cin>>b;
+	cout<<"Is customer senior citizen (y(1)/n(any): ";
+	cin>>c;
+	if(c==1){
+		d=(a*b*10)/100;
+		cout<<d;
+	}
+	else{
+		d=(a*b*12)/100;
+		cout<<d;}}
+5)Develop a C++ program to perform different arithmetic operations such as addition, subtraction, division, modulus and multiplication switch case 
+#include<iostream>
+using namespace std;
+int main(){
+	int c,a,b;
+	cout<<"1.add"<<endl;
+	cout<<"2.sub"<<endl;
+	cout<<"3.mul"<<endl;
+	cout<<"4.div"<<endl;
+	cout<<"5.mode"<<endl;
+	cout<<"Choise:"<<endl;
+	cin>>c;
+	cout<<"x:";
+	cin>>a;
+	cout<<"y:";
+	cin>>b;
+	switch(c){
+		case 1:
+			cout<<a+b;
+			break;
+		case 2:
+			cout<<a-b;
+			break;
+		case 3:
+			cout<<a*b;
+			break;
+		case 4:
+			cout<<a/b;
+			break;
+		case 5:
+			cout<<a%b;
+			break;}
 }
-OUTPUT:
-Enter year : 2008
-2008 is a Leap Year
+6) 12. Write a program to enter the marks of a student in four subjects. Then calculate the total and aggregate, display the grade obtained by the student. If the student scores an aggregate greater than 75%, then the grade is Distinction. If aggregate is 60>= and <75, then the grade is First Division. If aggregate is 50 >= and <60, then the grade is Second Division. If aggregate is 40>= and <50, then the grade is Third Division. Else the grade is Fail.
+#include<iostream>
+using namespace std;
+int main(){
+	double a,b,c,d,e,f,g;
+	cout<<"test 1:";
+	cin>>a;
+	cout<<"test 2:";
+	cin>>b;
+	cout<<"test 3:";
+	cin>>c;
+	cout<<"test 4:";
+	cin>>d;
+	cout<<"test 5:";
+	cin>>e;
+	f=a+b+c+d+e;
+	g=f/5;
+	if(g>=90){
+		cout<<"A";
+	}
+	else if(80<=g && g>90){
+		cout<<"B";
+	}
+	else if(70<=g && g>80){
+		cout<<"C";
+	}
+	else if(60<=g && g>70){
+		cout<<"D";
+	}
+	else if(50<=g && g>60){
+		cout<<"E";
+	}
+	else{
+		cout<<"fail";
+	}
+	cout<<"total:"<<f<<endl;
+	cout<<"avg:"<<g<<endl;}
+7)factors of given number?
+#include<iostream>
+using namespace std;
+int main(){
+	int a,b;
+	cout<<"Enter:";
+	cin>>a;
+	for(int i=1;i<=a;i++){
+		if(a%i==0){
+			b++;
+		}}
+	cout<<b;}
+8) Write a program to check if a given year is leap year or not. If it is leap year then print the next leap year, if it is non-leap year then print the previous leap year. 
+#include<iostream>
+using namespace std;
+int main(){
+	int a;
+	cout<<"Enter:";
+	cin>>a;
+	if(a==0){
+		cout<<"invalid";
+	}
+	else if(a%400==0){
+		cout<<"leap year"<<a+4;
+	}
+	else if(a%4==0 && a%100!=0){
+		cout<<"leap yeaer"<<a+4;
+	}
+	else{
+		cout<<"not leap"<<a-1;}}
+9) Write a program to print all the composite numbers between a and b?
+#include<iostream>
+using namespace std;
+int main(){
+	int a=10,b=20,c=0;
+	for(int i=a;i<=b;i++){
+		for(int j=2;j<i-1;j++){
+			if(i%j==0){
+				cout<<i<<endl;
+				break;
+			}}}}
+10)missing eliments in array using sort?
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main(){	
+	int a[]={1,2,4};
+	int n=sizeof(a)/4;
+	sort(a,a+n);
+	for(int i=1;i<n-1;i++){
+	
+	if(a[i]-a[i+1]!=-1){
+		cout<<a[i]+1;
+	}}}
+11) Write a Program to Remove the Duplicate Items from a array
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main(){
+	int n;
+	cout<<"size";
+	cin>>n;
+	int a[n];
+	cout<<"enter:"<<endl;
+	for(int i=0;i<n;i++){
+		cin>>a[i];
+	}
+	n=unique(a,a+n)-a;
+	for(int i=0;i<n;i++){
+		cout<<a[i];
+}}
+12) Write a Program to Find the Nth Largest Number in a array
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main(){
+	int n;
+	cout<<"Enter:";
+	cin>>n;
+	int a[n];
+	for(int i=0;i<=n;i++){
+		cin>>a[i];
+	}
+	sort(a,a+n);
+	cout<<a[n-1];
+}
+13) Find the factorial of n?
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main(){
+	int f=1,a;
+	cout<<"Enter:";
+	cin>>a;
+	for(int i=1;i<=a;i++){
+		f=f*i;
+	}
+	cout<<f;}
+14) Develop   a Program in C++ to calculate income tax for the employee based on the following condition 
+1.	if taxableincome<=60000,  tax=0; 
+2.	if taxableincome>60000 and taxableincome<=150000,     tax= taxableincome *0.05; 
+3.	if taxableincome>150000 or taxableincome<=500000) tax= taxableincome *0.1;
+else tax=tableinc*0.15; 
+#include<iostream>
+using namespace std;
+int main(){
+	double a,y;
+	cout<<"incom:";
+	cin>>a;
+	if(a<=60000){
+		y=0;
+		cout<<"tax:"<<y;
+	}
+	else if(60000<a && a<=150000){
+		y=a*0.05;
+		cout<<"tax:"<<y;
+	}
+	else if(150000<a && a<=500000){
+		y=a*0.15;
+		cout<<"tax:"<<y;
+	}}
+15)Develop   a program using choice to check  
+Case 1: Given string is palindrome or not
+Case 2: Given number is palindrome or not
+#include <iostream>
+#include <string> 
+using namespace std;
+int main() {
+    int choice;
+    cout << "1. Check palindrome for number" << endl;
+    cout << "2. Check palindrome for string" << endl;
+    cout << "Enter choice: ";
+    cin >> choice;
+    switch (choice) {
+        case 1: {
+            int num, reversedNum = 0, originalNum;
+            cout << "Enter a number: ";
+            cin >> num;
+            originalNum = num;
+            while (num != 0) {
+                int remainder = num % 10;
+                reversedNum = reversedNum * 10 + remainder;
+                num /= 10;
+            }
+            if (originalNum == reversedNum)
+                cout << originalNum << " is a palindrome." << endl;
+            else
+                cout << originalNum << " is not a palindrome." << endl;
+            break;
+        }
+        case 2: {
+            string str;
+            cout << "Enter a string: ";
+            cin >> str;
+            string reversedStr = "";
+            for (int i = str.length() - 1; i >= 0; --i) {
+                reversedStr += str[i];
+            }
+            if (str == reversedStr)
+                cout << str << " is a palindrome." << endl;
+            else
+                cout << str << " is not a palindrome." << endl;
+            break;
+        }
+        default:
+            cout << "Invalid choice!" << endl;
+            break;
+    }}
+16) Identify  the Mth maximum number and Nth minimum number in an array and then find the sum of it and difference of it.
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main(){
+	int n,a[n];
+	cout<<"size:";
+	cin>>n;
+	cout<<"Enter:";
+	for(int i=0;i<n;i++){
+		cin>>a[i];
+	}
+	n=sizeof(a)/3;
+	sort(a,a+n);
+	int x,y,c,d;
+	cout<<"Nth min:";
+	cin>>x;
+	cout<<"Mth max:";
+	cin>>y;
+	c=a[x-1];
+	d=a[n-y];
+	cout<<c<<"Nth min"<<endl;
+	cout<<d<<"mth max"<<endl;
+	cout<<"sum:"<<c+d<<endl;
+	cout<<"diff:"<<d-c<<endl;
+}
+17) Develop  a program to print Right Triangle Star?
+#include<iostream>
+using namespace std;
+int main(){
+	int n;
+	cout<<"n:";
+	cin>>n;
+	for(int i=n;i>0;--i){
+		for(int j=0;j<=n;j++){
+			if(j>=i){
+				cout<<"*";
+			}
+			else{
+				cout<<" ";
+			}}
+		cout<<endl;}}
+18) Develop a program to print the below pattern 
+1 
+2	2 
+3	3  3
+4	4   4   4 
+#include<iostream>
+using namespace std;
+int main(){
+	int n;
+	cout<<"N:";
+	cin>>n;
+	for(int i=0;i<n;i++){
+		for(int j=0;j<=i;j++){
+			cout<<i+1;
+		}
+		cout<<endl;}}
+19) Develop a C++ program to generate Electricity bill. Create a class with the following members: 
+Consumer no., consumer name, previous month reading, current month reading, type of EB connection (i.e domestic or commercial).  
+
+Compute the bill amount using the following tariff. If the type of the EB connection is domestic,  calculate the amount to be paid as follows:  
+First 100 units - Rs. 1 per unit  
+101-200 units - Rs. 2.50 per unit  
+201 -500 units - Rs. 4 per unit  
+> 501 units - Rs. 6 per unit 
+
+ If the type of the EB connection is commercial, calculate the amount to be paid as follows:  First 100 units - Rs. 2 per unit  
+101-200 units - Rs. 4.50 per unit  
+201 -500 units - Rs. 6 per unit  
+> 501 units - Rs. 7 per unit 
+#include<iostream>
+using namespace std;
+class ebill{
+	public:
+		int cons_no,pre_read,cur_read,eb_type,usedunits;
+		string cons_name;
+		float amount=0;
+		void input(void);
+		void calculation();
+		void display();
+};
+void ebill::input(){
+	cout<<"costmer name:"<<endl;
+	cin>>cons_name;
+	cout<<"costmer number:"<<endl;
+	cin>>cons_no;
+	cout<<"previous month reading:"<<endl;
+	cin>>pre_read;
+	cout<<"current month reading:"<<endl;
+	cin>>cur_read;
+	cout<<"1.domastic,2.commercial:"<<endl;
+	cin>>eb_type;
+}
+void ebill::calculation(){
+	if(eb_type==1){
+		usedunits=cur_read-pre_read;
+		if(usedunits<100)
+		amount=(usedunits*2);
+		if(usedunits>100&&usedunits<200)
+		amount=100+((usedunits-100)*4.5);
+		if(usedunits>200&&usedunits<=500)
+		amount=350+((usedunits-100)*6);
+		if(usedunits>500)
+		amount=1550+((usedunits-500)*7);
+		}
+	if(eb_type==2){
+		usedunits=cur_read-pre_read;
+		if(usedunits<100)
+		amount=(usedunits*2);
+		if(usedunits>100&&usedunits<200)
+		amount=200+((usedunits-100)*4.5);
+		if(usedunits>200&&usedunits<=500)
+		amount=650+((usedunits-100)*6);
+		if(usedunits>500)
+		amount=2450+((usedunits-500)*7);
+	}
+	}
+void ebill::display(){
+	cout<<amount;
+}
+int main(){
+	ebill e1;
+	e1.input();
+	e1.calculation();
+	e1.display();
+}
+20) Developa Employee class with Emp_name, Emp_id, Address, Mail_id, Mobile_no as members. Inherit the classes, Programmer, Assistant Professor, Associate Professor and Professor from employee class. Add Basic Pay (BP) as the member of all the inherited classes with 97% of BP as DA, 10 % of BP as HRA, 12% of BP as PF, 0.1% of BP for staff club fund. Generate pay slips for the employees with their gross and net salary.
+#include<iostream>
+using namespace std;
+class emp{
+	public:
+		string emp_name,emp_id,mail,addres,ph;
+		double bp,gp,np,da,hra,pf,cf;
+		void input(void);
+		void calculation();
+		void display();
+};
+void emp::input(){
+	cout<<"Employee name:";
+	cin>>emp_name;
+	cout<<"Employee id:";
+	cin>>emp_id;
+	cout<<"Employee mail:";
+	cin>>mail;
+	cout<<"address:";
+	cin>>addres;
+	cout<<"mobile number:";
+	cin>>ph;
+	cout<<"basic pay:";
+	cin>>bp;
+}
+void  emp::calculation(){
+	da=bp*0.97;
+	hra=bp*0.10;
+	pf=bp*0.12;
+	cf=bp*0.001;
+	gp=bp+da+hra+pf;
+	np=gp-pf-cf;
+}
+void emp::display(){
+	cout<<"Employee name:"<<emp_name;
+	cout<<"Employee id:"<<emp_id;
+	cout<<"Employee mail:"<<mail;
+	cout<<"address:"<<addres;
+	cout<<"mobile number:"<<ph;
+	cout<<"basic pay:"<<bp;
+	cout<<"DA:"<<da;
+	cout<<"HRA:"<<hra;
+	cout<<"PF:"<<pf;
+	cout<<"CF:"<<cf;
+	cout<<"GP:"<<gp;
+	cout<<"NP:"<<np;
+}
+int main(){
+	emp a;
+	a.input();
+	a.calculation();
+	a.display();
+}
+21) Suppose you have a Piggie Bank with an initial amount of Rs.500 and you have to add some more amount to it. Create a class 'AddAmount' with a data member named 'amount' with an initial value of Rs.500. Now make two constructors of this class as follows: 
+i - without any parameter - no amount will be added to the Piggie Bank iki - having a parameter which is the amount that will be added to the Piggie Bank Create an object of the 'AddAmount' class and display the final amount in the Piggie Bank. 
+#include<iostream>
+using namespace std;
+class add{
+	public:
+		int a=500,b,c;
+		void input(void);
+		void display();
+		void calculation();
+};
+void add::input(){
+	cout<<"amount to add piggy bank:";
+	cin>>b;
+}
+void add::calculation(){
+	c=a+b;
+}
+void add::display(){
+	cout<<"total saving is:"<<c<<endl;
+}
+int main(){
+	add a;
+	a.input();
+	a.calculation();
+	a.display();
+}
+22) Find the max of an integral data set. The program will ask the user to input the number of data values in the set and each value. The program prints on screen a pointer that points to the max value. 
+#include<iostream>
+using namespace std;
+int main(){
+	int n,max=0;
+	cout<<"size:";
+	cin>>n;
+	int a[n];
+	for(int i=0;i<=n;i++){
+		cin>>a[i];
+	}
+	for(int j=0;j<=n;j++){
+		if(a[j]>max){
+			max=a[j];
+		}}
+	int *pointer=&max;
+		cout<<"largest value:"<<*pointer;
+}
+23) Count the number of persons inside a bank, by increasing count whenever a person enters a bank, using an increment(++) operator overloading function, and decrease the count whenever a person leaves the bank using a decrement(--) operator overloading function inside a class?
+#include<iostream>
+using namespace std;
+class counter{
+	public:
+		int a;
+		counter(){
+			a=0;
+		}
+		void operator++(){
+			a++;
+		}
+		void operator--(){
+			a--;
+		}
+		int display(){
+			return a;
+		}
+};
+int main(){
+	counter c1;
+	cout<<"intial number of people:"<<c1.display()<<endl;
+	++c1;
+	++c1;
+	++c1;
+	++c1;
+	cout<<"present number:"<<c1.display()<<endl;
+	--c1;
+	cout<<"some of them leave:"<<c1.display()<<endl;
+}
+24) Program to find whether the given number is Armstrong number or not?
+#include<iostream>
+using namespace std;
+int main(){
+	int a,b,c=0,n;
+	cout<<"enter:";
+	cin>>a;
+	n=a;
+	while(a!=0){
+		b=a%10;
+		c+=b*b*b;
+		a/=10;
+	}
+	if(c==n){
+		cout<<"armstrong";
+	}
+	else{
+		cout<<"not";}}
+25) Problem Statement : A child is running up a staircase with n steps and can hop either 1 step, 2 steps, or 3 steps at a time. Implement a method to count how many possible ways the child can run up the stairs.
+#include<iostream>
+using namespace std;
+int count(int n){
+	if(n<0){
+		return 0;
+	}
+	else if(n==0){
+		return 1;
+	}
+	else{
+		return count(n-1)+count(n-2)+count(n-3);
+		}
+}
+int main(){
+	int n;
+	cout<<"Enter the number of stairs:";
+	cin>>n;
+	cout<<"possible stirs can run:"<<count(n)<<endl;
+}
+26) Write a program to find the sum of digits of N digit number (sum should be single digit)
+#include<iostream>
+using namespace std;
+int main(){
+	int a,b=0,c,d;
+	cout<<"Enter how many numbers:";
+	cin>>d;
+	cout<<"Enter n numbers:"<<endl;
+	cin>>a;
+	while(a>0){
+		c=a%10;
+		b=b+c;
+		a=a/10;
+	}
+	cout<<"sum"<<b;
+}
+27) Program to read and display the Names, Roll No., Marks and grades of 3 students who have appeared in the examination. Declare the class of name, Roll No. and grade. Create an array of objects to read and display the contents. 
+
+#include<iostream>
+using namespace std;
+class stu {
+public:
+    string name;
+    void getname() {
+        cout << "Enter name: ";
+        cin >> name;
+    }
+    void displaya() {
+        cout << "Name: " << name << endl;
+    }
+};
+class rool {
+public:
+    int n;
+    void getroll() {
+        cout << "Enter roll no: ";
+        cin >> n;
+    }
+    void displayb() {
+        cout << "Roll No: " << n << endl;
+    }
+};
+class gread {
+public:
+    char a;
+    void getgread() {
+        cout << "Enter grade: ";
+        cin >> a;
+    }
+    void displayc() {
+        cout << "Grade: " << a << endl;
+    }
+};
+int main() {
+    int x, i;
+    cout << "Enter number of students: ";
+    cin >> x;
+    stu students[10];
+    rool rolls[10];
+    gread grades[10];
+    for (i = 0; i < x; i++) {
+        cout << "Student " << i + 1 << endl;
+        students[i].getname();
+        rolls[i].getroll();
+        grades[i].getgread();
+    }
+    cout << "\nStudent Details:" << endl;
+    for (i = 0; i < x; i++) {
+        cout << "\nStudent " << i + 1 << endl;
+        students[i].displaya();
+        rolls[i].displayb();
+        grades[i].displayc();
+    }
+}
+28) The user to enter integers as inputs to be stored in the variables 'a' and 'b' respectively. There are also two integer pointers named ptrA and ptrB. Assign the values of 'a' and 'b' to ptrA and ptrB respectively, and display them. 
+
+#include<iostream>
+using namespace std;
+void display(int*a,int*b){
+	cout<<"enterdA"<<*a<<endl;
+	cout<<"enterdB"<<*b<<endl;
+}
+int main(){
+	int a,b;
+	cout<<"Enter A:";
+	cin>>a;
+	cout<<"enterd B:";
+	cin>>b;
+	display(&a,&b);
+}
+29) Write a program to print rectangle symbol pattern?
+#include<iostream>
+using namespace std;
+int main(){
+	int a,b;
+	cout<<"length:";
+	cin>>a;
+	cout<<"bredth:";
+	cin>>b;
+	for(int i=0;i<a;i++){
+		for(int j=0;j<b;j++){
+			cout<<"*";
+		}
+		cout<<endl;}}
+30) Write a program to print hollow square and full square symbol pattern? Get the different symbol for hollow square and full square as input from the user.
+#include<iostream>
+using namespace std;
+int main(){
+	int a,b;
+	cout<<"length:";
+	cin>>a;
+	cout<<"bredth:";
+	cin>>b;
+	for(int i=0;i<a;i++){
+		for(int j=0;j<b;j++){
+			if(i==0 || i==a-1 ||j==0 || j==b-1)
+			cout<<"*";
+			else
+				cout<<" ";
+		}
+		cout<<endl;}}
+31) Write a program to convert Decimal number equivalent to Binary number and octal numbers?
+#include<iostream>
+using namespace std;
+int main(){
+	int dec,bin[16],i=0,j=0;
+	cout<<"decimal:";
+	cin>>dec;
+	while(dec>0){
+		bin[i]=dec%2;
+		dec=dec/2;
+		++i;
+	}
+	for(j=i-1;j>=0;--j)
+	cout<<bin[j];
+}
+OPERATOR AND CONTROL STRUCTURES
+1.	Write a program to read in two integers and perform the following operations on them: addition, subtraction, multiplication, division, and modulo.
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n1,n2;
+	cout<<"enter number 1:";
+	cin>>n1;
+	cout<<"enter number 2:";
+	cin>>n2;
+	int sum=n1+n2;
+	cout<<"sum:"<<sum<<endl;
+	int difference=n1-n2;
+	cout<<"difference:"<<difference<<endl;
+	int product=n1*n2;
+	cout<<"product:"<<product<<endl;
+	int division=n1/n2;
+	cout<<"division:"<<division<<endl;
+	int modulo=n1%n2;
+	cout<<"modulo:"<<modulo<<endl;
+	return 0;
+}
+2.	Program to determine the integer is odd or even
+
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main()
+{
+	int num;
+	cout<<"enter the number:";
+	cin>>num;
+	if(num%2==0){
+	cout<<"even number";
+}
+else
+{
+	cout<<"odd number";
+}
+return 0;
+}
+3.	Program to compute the average of three integers
+
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n1,n2,n3;
+	cout<<"enter number1:";
+	cin>>n1;
+	cout<<"enter number2:";
+	cin>>n2;
+	cout<<"enter number3:";
+	cin>>n3;
+	int average=(n1+n2+n3)/3;
+	cout<<"average of"<<n1<<","<<n2<<","<<n3<<"is:"<<average<<endl;
+	return 0;
+}
+4.	Program to check two numbers are equal or not
+
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n1, n2;
+	cout<<"enter number1:";
+	cin>>n1;
+	cout<<"enter number2:";
+	cin>>n2;
+	if(n1==n2){
+		cout<<"equal";
+	}
+	else{
+		cout<<"not equal";
+	}
+	return 0;
+}
+5.	Write a program to read in two Floating numbers and perform the following operations on them: addition, subtraction, multiplication, division, and modulo.
+
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main()
+{
+	float n1,n2;
+	cout<<"enter number 1:";
+	cin>>n1;
+	cout<<"enter number 2:";
+	cin>>n2;
+	float sum=n1+n2;
+	cout<<"sum:"<<sum<<endl;
+	float difference=n1-n2;
+	cout<<"difference:"<<difference<<endl;
+	float product=n1*n2;
+	cout<<"product:"<<product<<endl;
+	float division=n1/n2;
+	cout<<"division:"<<division<<endl;
+	//modulo is not defined for the floating points
+	return 0;
+}
+6.	Program to check the character is a vowel or consonant
+
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main()
+{
+	char ch;
+	cout<<"enter a character:";
+	cin>>ch;
+	if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'){
+		cout<<"character is a vowel";
+	}
+	else{
+		cout<<"character is a consonant";
+	}
+	return 0;
+}
+7.	Program to check the number is positive, negative or zero
+
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main()
+{
+	int num;
+	cout<<"enter the number:";
+	cin>>num;
+	if(num>0){
+		cout<<"the number is positive";
+	}
+    if(num<0){
+		cout<<"the number is negative";
+	}
+	if(num==0){
+		cout<<"the number is zero";
+	}
+	return 0;
+}
+8.	Program to determine which number is greater among two integers
+
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main(){
+	int n1,n2;
+	cout<<"enter number 1:";
+	cin>>n1;
+	cout<<"enter number 2:";
+	cin>>n2;
+	if(n1>n2){
+		cout<<"greater among two integers is:"<<n1<<endl;
+	}
+	else{
+		cout<<"greater among two integers is:"<<n2<<endl;
+	}
+	return 0;
+}
+9.	Program to read a floating-number and round it to the nearest integer using the floor an ceil functions.
+
+PROGRAM:
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+	double num;
+	cout<<"enter a floating point number:";
+	cin>>num;
+	int roundeddown=floor(num);
+	int roundedup=ceil(num);
+	cout<<"original number:"<<num<<endl;
+	cout<<"rounded down(floor):"<<roundeddown<<endl;
+	cout<<"rounded up(ceil):"<<roundedup<<endl;
+	return 0;
+}
+10.	Program to swap two numbers using bitwise XOR operator
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a=3;
+	int b=4;
+	a=a^b;
+	b=a^b;
+	a=a^b;
+	cout<<"after swapping: a="<<a<<",b="<<b<<endl;
+	return 0;
+}
+11.	Largest among three numbers using ternary conditional operator
+
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n1,n2,n3;
+	cout<<"enter three numbers:";
+	cin>>n1>>n2>>n3;
+	int max=(n1>n2)?((n1>n3)?n1:n2):((n2>n3)?n2:n3);
+	cout<<"the largest number is:"<<max<<endl;
+	return 0;
+}
+12.	Program to check two numbers are equal or not using ternary conditional operator
+
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main(){
+	int n1,n2;
+	cout<<"enter the first number:";
+	cin>>n1;
+	cout<<"enter the second number:";
+	cin>>n2;
+	cout<<(n1==n2 ?"the numbers are equal":"the numbers are not equal")<<endl;
+	return 0;
+}
+13.	Program to check the integer is divisible by 3 or not using ternary conditional operator
+
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main()
+{
+	int num;
+	cout<<"enter the number:";
+	cin>>num;
+	cout<<(num%3==0 ? "divisible by 3":"not divisible by 3")<<endl;
+	return 0;
+}
+14.Program to print numbers from 1 to 10 using for loop
+
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main()
+{
+	for(int i=1;i<=10;i++)
+	cout<<i<<" ";
+	return 0;
+}
+
+15.Factorial of a number using for loop
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main()
+{
+	int i,fact=1,num;
+	cout<<"enter a number:";
+	cin>>num;
+	for(i=1;i<=num;i++){
+		fact=fact*i;
+	}
+	cout<<"factorial of a number is:"<<fact<<endl;
+	return 0;
+}
+16.Print multiplication table using for loop
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main()
+{
+	int num;
+	cout<<"enter the number:";
+	cin>>num;
+	for(int i=1;i<=10;i++){
+	cout<<num<<"*"<<i<<"="<<num*i<<endl;
+}
+return 0;	
+}
+
+17.Fibonacci series using for loop
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n,t1=0,t2=1,t3=0;
+	cout<<"enter the number of terms:";
+	cin>>n;
+	cout<<"fibonacci series:";
+	for(int i=1;i<=n;i++){
+		if(i==1){
+			cout<<t1<<",";
+			continue;
+		}
+		if(i==2){
+			cout<<t2<<",";
+			continue;
+		}
+		t3=t1+t2;
+		t1=t2;
+		t2=t3;
+		cout<<t3<<",";
+	}
+	return 0;
+}
+18.Prime number using for loop
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n,i,m=0,flag=0;
+	cout<<"enter the number:";
+	cin>>n;
+	m=n/2;
+	for(i=2;i<=m;i++)
+	{
+		if(n%i==0)
+		{
+			cout<<"not a prime number"<<endl;
+			flag=1;
+			break;
+		}
+	}
+	if(flag==0)
+	cout<<"prime number"<<endl;
+	return 0;
+}
+19.Check the string is palindrome or not using while loop
+PROGRAM:
+20.Sum of all digits using while loop (n=123 output:1+2+3=6)
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main(){
+	int n,sum=0,m;
+	cout<<"enter a number:";
+	cin>>n;
+	while(n>0)
+	{
+		m=n%10;
+		sum=sum+m;
+		n=n/10;
+	}
+	cout<<"sum is:"<<sum<<endl;
+	return 0;
+}
+21.GCD of two numbers using do-while loop
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n1,n2;
+	cout<<"enter the first number:";
+	cin>>n1;
+	cout<<"enter the second number:";
+	cin>>n2;
+	int gcd;
+	do{
+		int temp=n1;
+		n1=n2;
+		n2=temp%n2;
+	}
+	while(n2!=0);
+	gcd=n1;
+	cout<<"GCD of n1 and n2 is:"<<gcd<<endl;
+	return 0;
+}
+22.Check whether the number is perfect or not
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main(){
+int n,sum=0;	
+cout<<"enter a number:";
+cin>>n;
+for(int i=1;i<=n/2;i++){
+	if(n%i==0){
+		sum+=i;
+	}
+}
+if(sum==n){
+	cout<<"perfect number"<<endl;
+}
+else{
+	cout<<"not a perfect number"<<endl;
+}
+return 0;
+}
+23.Armstrong number
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main(){
+	int n,r,sum=0,temp;
+	cout<<"enter the number:";
+	cin>>n;
+	temp=n;
+	while(n>0)
+	{
+		r=n%10;
+		sum=sum+(r*r*r);
+		n=n/10;
+	}
+	if(temp==sum)
+	cout<<"armstrong number"<<endl;
+	else
+	cout<<"not an armstrong number"<<endl;
+	return 0;
+}
+24.Harshad number
+PROGRAM:
+#include<iostream>
+using namespace std;
+	int sumofdigits(int num){
+		int sum=0;
+		while(num>0){
+			sum+=num%10;
+			num/=10;
+		}
+		return sum;
+	}
+	int main()
+	{
+		int num;
+		cout<<"enter a number:";
+		cin>>num;
+		int sum=sumofdigits(num);
+		if(num%sum==0){
+			cout<<"harshad number"<<endl;
+		}
+		else{
+			cout<<"not a harshad number"<<endl;
+		}
+		return 0;
+	}
+25.Happy number
+PROGRAM:
+#include<iostream>
+using namespace std;
+int check(int num)
+{
+	int rem=0,sum=0;
+	while(num>0)
+	{
+		rem=num%10;
+		sum=sum+(rem*rem);
+		num/=10;
+	}
+	return sum;
+}
+void ishappynumber(int num)
+{
+	int result=num;
+	while(result!=1&& result!=4)
+	{
+		result=check(result);
+	}
+	if(result==1)
+	cout<<"happy number"<<endl;
+	else
+	if(result==4)
+	cout<<"not a happy number"<<endl;
+}
+int main(){
+	int num;
+	cout<<"enter a number:";
+	cin>>num;
+	ishappynumber(num);
+	return 0;
+}
+26.strong number
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main()
+{
+	int i, num, temp, rem;
+	long sum = 0, factorial = 1;
+	cout << "enter a number:";
+	cin >> num;
+	for(temp = num; temp > 0; temp =  temp / 10 )
+	{
+		factorial = 1;  
+		rem = temp % 10;	
+		for (i = 1; i <= rem; i++)
+		{
+			factorial = factorial * i;
+		}
+		cout << "\nThe Factorial of "<< rem << " = " << factorial;
+		sum = sum + factorial;
+	}	
+	cout << "\n\nThe Sum of the Factorials of " << num << " is = " << sum << "\n\n";
+			
+	if(num == sum)
+	{
+		cout<< "Strong Number";
+	}
+	else
+	{
+		cout<< "Not a Strong Number";
+	}
+ 	return 0;
+}
+27.buzz number
+PROGRAM:
+#include <iostream>
+#include <conio.h>
+using namespace std;
+int main()
+{
+    int n;
+    cout<<"Enter a number ";
+    cin>>n;
+    if(n%7==0 || n%10==7)
+    {
+        cout<<"Buzz number";
+    }
+    else
+    {
+        cout<<"Not a buzz number";
+    }
+    return 0;
+}
+28.neon number
+PROGRAM:
+#include <iostream>
+using namespace std;
+int main()
+{
+  int num;
+  cout << "Enter the number: ";
+  cin >> num;
+  int square = num * num;
+  int sum = 0;
+  while (square > 0)
+  {
+    int lastDigit = square % 10;
+    sum = sum + lastDigit;
+    square = square / 10;
+  }
+ 
+  if (sum == num)
+    cout<<"Neon number";
+  else
+    cout<<"NOT a Neon number";
+  return 0;
+}
+29.abundant number
+PROGRAM:
+#include <iostream>
+using namespace std;
+int sumOfDivisors(int num) {
+    int sum = 1; 
+    for (int i = 2; i <= num / 2; ++i) {
+        if (num % i == 0) {
+            sum += i;
+        }
+    }
+    return sum;
+}
+bool isAbundant(int num) {
+    return sumOfDivisors(num) > num;
+}
+int main() {
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+    if (isAbundant(num)) {
+        cout<<"abundant number." <<endl;
+    } else {
+        cout<<"not an abundant number." <<endl;
+    }
+    return 0;
+}
+30.narcissistic number
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main(){
+	int n,r,sum=0,temp;
+	cout<<"enter the number:";
+	cin>>n;
+	temp=n;
+	while(n>0)
+	{
+		r=n%10;
+		sum=sum+(r*r*r);
+		n=n/10;
+	}
+	if(temp==sum)
+	cout<<"narcissistic number"<<endl;
+	else
+	cout<<"not an narcissistic number"<<endl;
+	return 0;
+}
+31.print the pattern                                                                                                                                               1                                                                                                                                                                           22                                                                                                                                                                                  333                                                                                                                                                                       4444                                                                                                                                                                         55555
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main(){
+	int rows=5;
+	for(int i=1;i<=rows;i++){
+		for(int j=1;j<=i;j++){
+			cout<<i<<" ";
+		}
+		cout<<endl;
+	}
+	return 0;
+}
+32.print the pattern                                                                                                                                               *                                                                                                                                                                          **                                                                                                                                                                                  ***                                                                                                                                                                       ****                                                                                                                                                                         *****
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main(){
+	int rows;
+	cout<<"enter the number of rows:";
+	cin>>rows;
+	for(int i=1;i<=rows;i++){
+		for(int j=1;j<=i;j++){
+			cout<<"*";
+		}
+		cout<<"\n";
+	}
+	return 0;
+}
+33.Print pascal triangle pattern nested for loop
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main(){
+	int rows;
+	cout<<"enter the number of rows:";
+	cin>>rows;
+	for(int i=0;i<rows;i++){
+		int coefficient=1;
+		for(int space=1;space<=rows-i;space++){
+			cout<<" ";
+	}
+	for(int j=0;j<=i;j++){
+		cout<<coefficient<<" ";
+		coefficient=coefficient*(i-j)/(j+1);
+	}
+	cout<<endl;
+}
+	return 0;
+}
+34.Print diamond pattern with * using nested for loop
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main(){
+	int n;
+	cout<<"enter the number of rows:";
+	cin>>n;
+	for(int i=1;i<=n;i++){
+	for(int j=1;j<=n-i;j++){
+		cout<<" ";
+	}
+	for(int k=1;k<=2*i-1;k++){
+		cout<<"*";
+	}
+	cout<<endl;
+}
+for(int i=n-1;i>=1;i--){
+	for(int j=1;j<=n-i;j++){
+		cout<<" ";
+	}
+	for(int k=1;k<=2*i-1;k++){
+		cout<<"*";
+	}
+	cout<<endl;
+}
+return 0;
+}
+35.Program to reverse the elements in an array
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main(){
+	int arr[10],n,temp,i,j;
+	cout<<"enter the number of elements:";
+	cin>>n;
+	for(i=0;i<n;i++)
+	{
+		cout<<"enter the elements"<<i+1<<":";
+		cin>>arr[i];
+	}
+	for(i=0,j=n-1;i<n/2;i++,j--)
+	{
+		temp=arr[i];
+		arr[i]=arr[j];
+		arr[j]=temp;
+	}
+	cout<<"\n reverese all elements of the array"<<endl;
+	for(i=0;i<n;i++)
+	{
+		cout<<arr[i]<<" ";
+	}
+	return 0;
+}
+36.Program to insert an element in an array at a specific position
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main(){
+	int arr[50],i,elem,pos,tot;
+	cout<<"enter the size of the array:";
+	cin>>tot;
+	cout<<"enter"<<tot<<"array elements:";
+	for(i=0;i<tot;i++)
+	cin>>arr[i];
+	cout<<"\nenter element to be inserted:";
+	cin>>elem;
+	cout<<"enter the position to insert:";
+	cin>>pos;
+	for(i=tot;i>=pos;i--)
+	arr[i]=arr[i-1];
+	arr[i]=elem;
+	tot++;
+	cout<<"\nthe new array is:\n";
+	for(i=0;i<tot;i++)
+	cout<<arr[i]<<" ";
+	cout<<endl;
+	return 0;
+}
+37.Program to Delete an element in an array at a specific position
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int arr[50], tot, i, elem, j, found=0;
+    cout<<"Enter the Size: ";
+    cin>>tot;
+    cout<<"Enter "<<tot<<" Array Elements: ";
+    for(i=0; i<tot; i++)
+        cin>>arr[i];
+    cout<<"\nEnter Element to Delete: ";
+    cin>>elem;
+    for(i=0; i<tot; i++)
+    {
+        if(arr[i]==elem)
+        {
+            for(j=i; j<(tot-1); j++)
+                arr[j] = arr[j+1];
+            found=1;
+            i--;
+            tot--;
+        }
+    }
+    if(found==0)
+        cout<<"\nElement doesn't found in the Array!";
+    else
+    {
+        cout<<"\nElement Deleted Successfully!";
+        cout<<"\n\nThe New Array is:\n";
+        for(i=0; i<tot; i++)
+            cout<<arr[i]<<"  ";
+    }
+    cout<<endl;
+    return 0;
+}
+38.Find the sum of all elements in an array
+PROGRAM:
+#include <iostream>
+using namespace std;
+int main()
+{
+   int arr[100],i,size,n,sum=0;
+   cout<<"Enter the number of elements: ";
+   cin>>size;
+   cout<<"Enter the value of elements: "<<endl;
+   for(i=0;i<n;i++)
+   {
+     cin>>arr[i]; 
+   }
+
+   for(i=0;i<n;i++)
+   {
+    sum=sum+arr[i];
+   }
+    cout<<"Sum of elements in an array is: "<<sum;
+    return 0;
+}
+39.Find the average of all elements in an array
+PROGRAM:
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n, i;
+    float num[100], sum=0.0, average;
+    cout << "Enter the size of array: ";
+    cin >> n;
+    for(i = 0; i < n; ++i)
+    {
+        cout << i + 1 << ". Enter number: ";
+        cin >> num[i];
+        sum += num[i];
+    }
+    average = sum / n;
+    cout << "Average = " << average;
+    return 0;
+}
+40.Find the second largest element in an array
+PROGRAM:
+#include <iostream>
+using namespace std;
+int main(){
+   int n, num[50], largest, second;
+   cout<<"Enter number of elements: ";
+   cin>>n;
+   for(int i=0; i<n; i++){
+      cout<<"Enter Array Element"<<(i+1)<<": ";
+      cin>>num[i];
+   }
+   if(num[0]<num[1]){ 
+      largest = num[1];
+      second = num[0];
+   }
+   else{ 
+      largest = num[0];
+      second = num[1];
+   }
+   for (int i = 2; i< n ; i ++) {
+      if (num[i] > largest) {
+         second = largest;
+         largest = num[i];
+      }
+      else if (num[i] > second && num[i] != largest) {
+         second = num[i];
+      }
+   }
+   cout<<"Second Largest Element in array is: "<<second;
+   return 0;
+}
+41.Find the number of occurrences of a value in an array
+PROGRAM:
+#include <iostream>
+using namespace std;
+int countOccurrences(int arr[], int size, int target) {
+    int count = 0;   
+    for (int i = 0; i < size; ++i) {
+        if (arr[i] == target) {
+            count++;
+        }
+    }
+    return count;
+}
+int main() {
+    int size, target;
+    cout << "Enter the size of the array: ";
+    cin >> size;
+    if (size <= 0) {
+        cout << "Array size should be greater than 0." << endl;
+        return 1;
+    }
+    int arr[size];
+    cout << "Enter the elements of the array:" << endl;
+    for (int i = 0; i < size; ++i) {
+        cout << "Enter element " << i + 1 << ": ";
+        cin >> arr[i];
+    }
+    cout << "Enter the value to find occurrences: ";
+    cin >> target;
+    int occurrences = countOccurrences(arr, size, target);
+    cout << "The number of occurrences of " << target << " in the array is: " << occurrences << endl;
+    return 0;
+}
+
+42.Merge two array
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int arrOne[50], arrTwo[50], arrMerge[100];
+	int size1, size2, i, k;
+    cout<<"Enter the Size for First Array: ";
+    cin>>size1;
+    cout<<"Enter Elements for First Array: ";
+    for(i=0; i<size1; i++)
+    {
+        cin>>arrOne[i];
+        arrMerge[i] = arrOne[i];
+    }
+    k = i;
+    cout<<"\nEnter the Size for Second Array: ";
+    cin>>size2;
+    cout<<"Enter Elements for Second Array: ";
+    for(i=0; i<size2; i++)
+    {
+        cin>>arrTwo[i];
+        arrMerge[k] = arrTwo[i];
+        k++;
+    }
+    cout<<"\nThe New Array (Merged Array):\n";
+    for(i=0; i<k; i++)
+        cout<<arrMerge[i]<<" ";
+    cout<<endl;
+    return 0;
+}
+43.Create a dynamic array using pointers and display the values
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main(){
+	int size;
+	cout<<"enter the size of the dynamic array:";
+	cin>>size;
+	int*dynamicarray=new int[size];
+	for(int i=0;i<size;i++){
+		dynamicarray[i]=i*2;
+	}
+	cout<<"value of the dynamic array:";
+	for(int i=0;i<size;i++){
+		cout<<dynamicarray[i]<<" ";
+	}
+	delete[] dynamicarray;
+	return 0;
+}
+44.Create a dynamic 2D (Two dimensional) array using pointers and display the values
+PROGRAM:
+#include <iostream>
+using namespace std;
+int main() {
+    int rows, cols;
+    cout << "Enter the number of rows: ";
+    cin >> rows;
+    cout << "Enter the number of columns: ";
+    cin >> cols;
+    int** dynamicArray = new int*[rows];
+    for (int i = 0; i < rows; ++i) {
+        dynamicArray[i] = new int[cols];
+    }
+    int value = 1;
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            dynamicArray[i][j] = value++;
+        }
+    }
+    cout << "Dynamic 2D Array:" << endl;
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            cout << dynamicArray[i][j] << " ";
+        }
+        cout << endl;
+    }
+    for (int i = 0; i < rows; ++i) {
+        delete[] dynamicArray[i];
+    }
+    delete[] dynamicArray;
+    return 0;
+}
+45.Add 2 matrices
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main()
+{
+	int rows,cols;
+	cout<<"enter the number of rows:";
+	cin>>rows;
+	cout<<"enter the number of columns:";
+	cin>>cols;
+	int matrix1[rows][cols],matrix2[rows][cols],result[rows][cols];
+	cout<<"enter elements of first matrix:\n";
+	for(int i=0;i<rows;i++){
+		for(int j=0;j<cols;j++){
+			cin>>matrix1[i][j];
+		}
+	}
+	cout<<"enter elements of second matrix:\n";
+	for(int i=0;i<rows;i++){
+		for(int j=0;j<cols;j++){
+			cin>>matrix2[i][j];
+		}
+	}
+	for(int i=0;i<rows;i++){
+		for(int j=0;j<cols;j++){
+			result[i][j]=matrix1[i][j]+matrix2[i][j];
+		}
+	}
+	cout<<"resultant matrix after addition:\n";
+	for(int i=0;i<rows;i++){
+		for(int j=0;j<cols;j++){
+			cout<<result[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+	return 0;
+}
+46.Multiply 2 matrices
+PROGRAM:
+#include <iostream>  
+using namespace std;  
+int main()  
+{  
+int a[10][10],b[10][10],mul[10][10],r,c,i,j,k;    
+cout<<"enter the number of row=";    
+cin>>r;    
+cout<<"enter the number of column=";    
+cin>>c;    
+cout<<"enter the first matrix element:\n";    
+for(i=0;i<r;i++)    
+{    
+for(j=0;j<c;j++)    
+{    
+cin>>a[i][j];  
+}    
+}    
+cout<<"enter the second matrix element:\n";    
+for(i=0;i<r;i++)    
+{    
+for(j=0;j<c;j++)    
+{    
+cin>>b[i][j];    
+}    
+}    
+cout<<"multiply of the matrix:\n";    
+for(i=0;i<r;i++)    
+{    
+for(j=0;j<c;j++)    
+{    
+mul[i][j]=0;    
+for(k=0;k<c;k++)    
+{    
+mul[i][j]+=a[i][k]*b[k][j];    
+}    
+}    
+}       
+for(i=0;i<r;i++)    
+{    
+for(j=0;j<c;j++)    
+{    
+cout<<mul[i][j]<<" ";    
+}    
+cout<<"\n";    
+}    
+return 0;  
+}
+47.Find the sum of diagonals of a matrix
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main()
+{
+	int i, j, rows, columns, sum = 0;	
+	cout << "\n Enter the rows and Columns:";
+	cin >> i >> j;
+	int sumDgnalArr[i][j];	
+	cout << "\nEnter the elements:\n";
+	for(rows = 0; rows < i; rows++)	{
+		for(columns = 0; columns < i; columns++) {
+			cin >> sumDgnalArr[rows][columns];
+		}		
+	}
+ 	for(rows = 0; rows < i; rows++)
+  	{
+  		sum = sum + sumDgnalArr[rows][rows];
+  	} 	
+  	cout << "\nThe Sum of Diagonal Elements:" << sum;
+ 	return 0;
+}
+Functions in C++
+
+1.	Find factorial using function
+PROGRAM:
+#include<iostream>
+using namespace std;
+void fact();
+int main()
+{
+	fact();
+}
+void fact()
+{
+	int n,i,fact=1;
+	cout<<"enter the number:";
+	cin>>n;
+	for(i=1;i<=n;i++)
+	fact=fact*i;
+	cout<<"\nfactorial of"<<n<<"is\n"<<fact;
+}
+
+
+
+
+2.	Find prime number using function
+PROGRAM:
+#include<iostream>
+using namespace std;
+int prime(int);
+int main()
+{
+	int n,s;
+	cout<<"enter the number:";
+	cin>>n;
+	s=prime(n);
+	s==2? cout<<"prime number":cout<<"not a prime number";
+}
+int prime(int n)
+{
+	int i,count=0;
+	for(i=1;i<=n;i++)
+	if(n%i==0)
+	count++;
+	return count;
+}
+3.	Find the reverse of a string using function
+PROGRAM:
+#include<iostream>
+#include<cstring>
+using namespace std;
+void reverse(char[]);
+int main()
+{
+	char c[20];
+	cout<<"enter the string:";
+	gets(c);
+	reverse(c);
+}
+void reverse(char c[])
+{
+	cout<<"reverse of string:"<<strrev(c);
+}
+4.	Find minimum and maximum element in an array using function
+PROGRAM:
+#include<iostream>
+using namespace std;
+#define n 6
+void max_min(int[]);
+int main()
+{
+	int i,a[20];
+	cout<<"enter the elements of size 6:";
+	for(i=0;i<n;i++)
+	cin>>a[i];
+	max_min(a);
+}
+void max_min(int a[])
+{
+	int max=a[0],min,i;
+	for(i=0;i<n;i++)
+	{
+		if(max<a[i])
+		max=a[i];
+		if(min>a[i])
+		min=a[i];
+	}
+	cout<<"\nmaximum:"<<max;
+	cout<<"\nminimum:"<<min;
+}
+5.	Find GCD of two number using function
+PROGRAM:
+#include<iostream>
+using namespace std;
+void gcd();
+int main()
+{
+	gcd();
+}
+void gcd()
+{
+	int n1,n2,g,i;
+	cout<<"enter two numbers:";
+	cin>>n1>>n2;
+	for(i=1;i<=n1||i<=n2;i++)
+	if(n1%i==0&&n2%i++)
+	g=i;
+	cout<<"gcd of n1 and n2 is:"<<g<<endl;
+}
+6.	Function to count the no of elements in a string
+PROGRAM:
+#include<iostream>
+#include<string.h>
+using namespace std;
+int count(char[]);
+int main()
+{
+	int a;
+	char c[100];
+	cout<<"enter the string:";
+	gets(c);
+	a=count(c);
+	cout<<"\nthe given string contains\n"<<a<<"words";
+}
+int count(char c[])
+{
+	int i,count=1;
+	for(i=0;i<strlen(c);i++)
+	{
+		if(c[i]==' ')
+		count++;
+	}
+	return count;
+}
+7.	Convert Celsius and Fahrenheit using function
+PROGRAM:
+#include<iostream>
+using namespace std;
+int temp(int c);
+int main(){
+	int a,c;
+	cout<<"enter the temp in celsius:";
+	cin>>c;
+	a=temp(c);
+	cout<<"temp in fahrenheit:"<<a;
+}
+int temp(int c)
+{
+	int f=(c*9/5)+32;
+	return f;
+}
+8.	Find the area of a circle using function
+PROGRAM:
+#include<iostream>
+using namespace std;
+#define pi 3.14
+int area(int);
+int main(){
+	int a,r;
+	cout<<"enter the radius:\n";
+	cin>>r;
+	a=area(r);
+	cout<<"radius:"<<a;
+}
+int area(int r)
+{
+	int a=pi*r*r;
+	return a;
+}
+9.	Check whether the string is palindrome or not
+PROGRAM:
+   Constructor and destructor
+1.	Write a c++ program to create a class for a bank account with a constructor and a destructor
+PROGRAM:
+#include <iostream>
+#include <string>
+using namespace std;
+class BankAccount {
+private:
+    string accountHolder;
+    double balance;
+public:
+    BankAccount(string holder, double initialBalance) : accountHolder(holder), balance(initialBalance) {
+        cout << "Creating a bank account for " << accountHolder << " with initial balance: $" << balance <<endl;
+    }
+    ~BankAccount() {
+        cout << "Destroying the bank account for " << accountHolder <<endl;
+    }
+};
+
+int main() {
+    BankAccount myAccount("John Doe", 1000.0);
+    return 0;
+}
+2.	Write a c++ program to create a class for a car with a constructor and a destructor
+PROGRAM:
+#include <iostream>
+#include <string>
+using namespace std;
+class Car {
+private:
+    string make;
+    string model;
+public:
+    Car(const string& make, const string& model) : make(make), model(model) {
+        cout <<"Creating a car object."<<endl;
+    }
+    ~Car() {
+        cout <<"Destroying the car object."<<endl;
+    }
+};
+int main() {
+    Car myCar("Toyota", "Camry");
+    return 0;
+}
+3.	Write a c++ program to create a class for a rectangle with a constructor and a destructor
+PROGRAM:
+#include<iostream>
+using namespace std;
+class rectangle{
+	private:
+		double width;
+		double length;
+		public:
+			rectangle(double l,double w):length(l),width(w){
+				cout<<"creating a rectangle with length"<<length<<"and width"<<width<<endl;
+			}
+			~rectangle(){
+				cout<<"destroying a rectangle with length"<<length<<"and width"<<width<<endl;
+			}
+			double area(){
+				return length*width;
+			}
+			};
+			int main(){
+				rectangle myrectangle(2.5,4.2);
+				double area=myrectangle.area();
+				cout<<"area of rectangle is:"<<area<<endl;
+				return 0;
+			}
+4.	Write a c++ program to create a class for a book with a constructor and a destructor
+PROGRAM:
+#include<iostream>
+#include<string>
+using namespace std;
+class book{
+	private:
+		string title;
+		string author;
+		public:
+			book(string title,string author):title(title),author(author){
+				cout<<"creating a object book with"<<title<<"by"<<author<<endl;
+			}
+			~book(){
+				cout<<"destroying a object book with"<<title<<"by"<<author<<endl;
+			}
+};
+int main()
+{
+	book mybook("c++","manasa");
+	return 0;
+}
+5.Write a c++ program to create a class for student with a constructor and a destructor
+PROGRAM:
+#include<iostream>
+#include<string>
+using namespace std;
+class student{
+	private:
+		string name;
+		int age;
+		public:
+			student(string studentname, int studentage):name(studentname),age(studentage){
+				cout<<"creating a object student with" << name<<"and age" << age<<endl;
+			}
+			~student(){
+				cout<<"destroying an object student with" << name<<"and age" << age<<endl;
+			}
+};
+int main()
+{
+	student mystudent("manasa",20);
+	return 0;
+}
+Inheritance and pointers
+1.	Create a base class called Shape with data members for height and width. Derive two classes Rectangle and Triangle from the base class. Write member functions to calculate the area and perimeter of each class
+PROGRAM:
+2.	Create a base class called vehicle with data members for make, model, and year. Derive two classes Car and Truck from the base class. The Car class should have additional data members for seating capacity and fuel type, while the Truck class should have additional data members for payload capacity and towing capacity. Write member functions to get and set the data members for each class
+PROGRAM:
+#include<iostream>
+using namespace std;
+class vehicle{
+	string make;
+	string model;
+	int year;
+	public:
+		void get_p()
+		{
+			cout<<"enter the make:";
+			cin>>make;
+			cout<<"enter the model:";
+			cin>>model;
+			cout<<"enter the year:";
+			cin>>year;
+		}
+		void display_p()
+		{
+			cout<<"MAKE:"<<make<<"\nMODEL:"<<model<<"\nYEAR:"<<year<<endl;
+		}
+};
+class car:public vehicle
+	{
+		int capacity;
+		string fuel;
+		public:
+		void get_s1()
+		{
+		get_p();
+		cout<<"enter the seating capacity:";
+		cin>>capacity;
+		cout<<"enter the type of fuel used:";
+		cin>>fuel;	
+    }
+	void display_s1()
+	{
+	display_p();
+		cout<<"SEATING CAPACITY:"<<capacity<<"\nTYPE OF FUEL:"<<fuel<<endl;
+	}
+	};
+	class truck:public vehicle
+	{
+		int payload;
+		int towing;
+		public:
+			void get_s2()
+			{
+			get_p();
+				cout<<"enter the payload capacity:";
+				cin>>payload;
+				cout<<"enter the towing capacity:";
+				cin>>towing;
+			}
+			void display_s2()
+			{
+				display_p();
+				cout<<"PAYLOAD CAPACITY:"<<payload<<"\nTOWING CAPACITY:"<<towing<<endl;
+			}
+	};
+	int main(){
+		car c;
+		c.get_s1();
+		c.display_s1();
+		truck t;
+		t.get_s2();
+		t.display_s2();
+		return 0;
+	}
+3.	Create a base class called Animal with data members for name, species, and age. Derive two classes Cat and Dog from the base class. The Cat class should have additional data members for color and breed, while the Dog class should have additional data members for weight and breed. Write member functions to get and set the data members for each class
+4.	Create a base class called Employee with data members for name, d, and salary Derive two classes Manager and Engineer from the base class. The Manager class should have additional data members for department and bonus, while the Engineer class should have additional data members for specialty and hours. Write member functions to get and set the data members for each class
+5.	Create a base class called Person with data members for name, age, and gender. Derive two classes Student and Teacher from the base class. The Student class should have additional data members for roll number and class, while the Teacher class should have additional data members for subject and salary. Write member functions to get and set the data members for each class.
+6.	Write a C++ program to create a pointer to an integer and display its value.
+PROGRAM:
+#include <iostream>
+using namespace std;
+int main() {
+    int myInteger = 42;
+    int* myPointer = &myInteger;
+    cout << "Value using pointer: " << *myPointer <<endl;
+    cout << "Value using variable: " << myInteger <<endl;
+    return 0;
+}
+7.	Write a C++ program to create a pointer to a float and display its value.
+PROGRAM:
+#include <iostream>
+using namespace std;
+int main() {
+    float myFloat = 2.13;
+    float* myPointer = &myFloat;
+    cout << "Value using pointer: " << *myPointer << endl;
+    cout << "Value using variable: " << myFloat << endl;
+    return 0;
+}
+8.	Write a C++ program to create a pointer to a char and display its value.
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main(){
+	char mychar='A';
+	char* mypointer=&mychar;
+	cout<<"the value using pointer:"<<mypointer<<endl;
+	cout<<"the value using variable:"<<mychar<<endl;
+	return 0;
+}
+9.	Write a C++ program to create a pointer to a double and display its value.
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main(){
+	double mydouble='3.14';
+	double* mypointer=&mydouble;
+	cout<<"the value using pointer is:"<<mypointer<<endl;
+	cout<<"the value using variable is:"<<mydouble<<endl;
+	return 0;
+}
+
+
+10.	Write a C++ program to create a pointer to a string and display its value.
+PROGRAM:
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+    string myString = "Hello, World!";
+    string* ptrToString = &myString;
+    cout << "Value of myString: " << *ptrToString <<endl;
+    return 0;
+}
+
+11.	Write a C++ program to create a pointer to an array of elements and display its value.
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main(){
+	string array[]={"manasa","orange","c++","saveetha"};
+	string*ptr=array;
+	cout<<"values in the array using pointer:"<<endl;
+    for(int i=0;i<4;i++)
+    cout<<"value at index"<<i<<":"<<*(ptr+i)<<endl;
+    return 0;
+}
+12.	Write a C++ program to create a pointer to an array of character and display its value.
+PROGRAM:
+#include<iostream>
+using namespace std;
+int main(){
+	char array[]={'a','b','c','d','e'};
+	char*ptr=array;
+	cout<<"values in the array using pointer:"<<endl;
+    for(int i=0;i<5;i++)
+    cout<<"value at index"<<i<<":"<<*(ptr+i)<<endl;
+    return 0;
+}
+13.	Write a C++ program to create a pointer to an array of floats and display its value.
+14.	Write a C++ program to create a pointer to an object and display its attributes.
+15.	Write a C++ program to create a pointer to a function and call the function using the pointer.
+Polymorphism
+1.	Create a base class called Person with a virtual function work (). Derive two classes Employee and Manager from the base class. Implement the work () function for each class
+PROGRAM:
+#include<iostream>
+using namespace std;
+class person{
+	public:
+		virtual void work(){
+			cout<<"the person is working"<<endl;
+		}
+};
+class employee:public person{
+	public:
+		void work() override{
+		cout<<"performing his duties"<<endl;
+		}
+};
+class manager:public person{
+	public:
+		void work() override{
+		cout<<"monitoring the employees"<<endl;
+		}
+};
+int main(){
+	employee employee;
+	manager manager;
+	cout<<"employee works";
+	employee.work();
+	cout<<"manager works";
+	manager.work();
+	person*person1=&employee;
+	person*person2=&manager;
+	cout<<"person1 work:";
+	person1->work();
+	cout<<"person2 work:";
+	person2->work();
+	return 0;
+}
+2.	 Create a base class called Animal with a virtual function eat (). Derive two classes Herbivore and Carnivore from the base class. Implement the eat function for each class.
+PROGRAM:
+#include<iostream>
+using namespace std;
+class animal{
+	public:
+		virtual void eat(){
+			cout<<"animal is eating"<<endl;
+		}
+};
+class herbivore:public animal{
+	public:
+		void eat() override{
+		cout<<" plants"<<endl;
+	}
+};
+class carnivore:public animal{
+	public:
+		void eat() override{
+		cout<<" other animals"<<endl;
+		}
+};
+int main(){
+	herbivore herbivore;
+	carnivore carnivore;
+	cout<<"herbivore eat";
+	herbivore.eat();
+	cout<<"carnivore eat";
+	carnivore.eat();
+	animal*animal1=&herbivore;
+	animal*animal2=&carnivore;
+	cout<<"animal1 eat:";
+	animal1->eat();
+	cout<<"aniaml2 eat:";
+	animal2->eat();
+	return 0;
+}
+3.	Create a base class called Shape with virtual functions area () and volume (). Derive two classes Sphere and Cylinder from the base class. Implement the area and volume () functions for each class
+PROGARM:
+#include<iostream>
+#include<cmath>
+using namespace std;
+class Shape {
+public:
+    virtual double area() const = 0;
+    virtual double volume() const = 0;
+};
+class Sphere : public Shape {
+private:
+    double radius;
+public:
+    Sphere(double r) : radius(r) {}
+    double area() const override {
+        return 4 * M_PI * pow(radius, 2); 
+    }
+    double volume() const override {
+        return (4.0 / 3.0) * M_PI * pow(radius, 3); 
+    }
+};
+class Cylinder : public Shape {
+private:
+    double radius;
+    double height;
+public:
+    Cylinder(double r, double h) : radius(r), height(h) {}
+    double area() const override {
+        return 2 * M_PI * radius * (radius + height); 
+    }
+    double volume() const override {
+        return M_PI * pow(radius, 2) * height; 
+    }
+};
+int main() {
+    Sphere sphere(2.0);
+    Cylinder cylinder(2.0, 5.0);
+    cout << "Sphere Area: " << sphere.area() << endl;
+    cout << "Sphere Volume: " << sphere.volume() << endl;
+    cout << "Cylinder Area: " << cylinder.area() << endl;
+    cout << "Cylinder Volume: " << cylinder.volume() << endl;
+    return 0;
+}
+4.	 Create a base class called Person with a virtual function greet). Derive two classes Student and Teacher from the base class. implement the greet) function for each class
+PROGRAM:
+#include<iostream>
+using namespace std;
+class person{
+	public:
+		virtual void greet(){
+			cout<<"person say hi"<<endl;
+		}
+};
+class student:public person{
+	public:
+		void greet() override{
+		cout<<"hello"<<endl;
+		}
+};
+class teacher:public person{
+	public:
+		void greet() override{
+		cout<<"good morning"<<endl;
+		}
+};
+int main(){
+	student student;
+	teacher teacher;
+	cout<<"student greet";
+	student.greet();
+	cout<<"teacher greet";
+	teacher.greet();
+	person*person1=&student;
+	person*person2=&teacher;
+	cout<<"person1 greets:";
+	person1->greet();
+	cout<<"person2 greets:";
+	person2->greet();
+	return 0;
+}
+5.	Create a base class called Shape with virtual functions area( ) and perimeter(). Derive two classes Rectangle and Triangle from the base class. Implement the area () and perimeter () functions for each class.
+PROGRAM:
+#include <iostream>
+using namespace std;
+class Shape {
+public:
+    virtual double area() const = 0;       
+    virtual double perimeter() const = 0;  
+};
+class Rectangle : public Shape {
+private:
+    double length;
+    double width;
+
+public:
+    Rectangle(double l, double w) : length(l), width(w) {}
+    double area() const override {
+        return length * width;
+    }
+    double perimeter() const override {
+        return 2 * (length + width);
+    }
+};
+class Triangle : public Shape {
+private:
+    double side1;
+    double side2;
+    double side3;
+public:
+    Triangle(double s1, double s2, double s3) : side1(s1), side2(s2), side3(s3) {}
+    double area() const override {
+        double s = (side1 + side2 + side3) / 2;
+        return (s * (s - side1) * (s - side2) * (s - side3));
+    }
+    double perimeter() const override {
+        return side1 + side2 + side3;
+    }
+};
+int main() {
+    Rectangle rectangle(5.0, 3.0);
+    Triangle triangle(3.0, 4.0, 5.0);
+    cout << "Rectangle Area: " << rectangle.area() << endl;
+    cout << "Rectangle Perimeter: " << rectangle.perimeter() <<endl;
+    cout << "Triangle Area: " << triangle.area() <<endl;
+    cout << "Triangle Perimeter: " << triangle.perimeter() <<endl;
+    return 0;
+}
+6.	Create a base class called Vehicle with a virtual function drive(). Derive two classes Car and Truck from the base class. Implement the drive() function for each class.
+PROGRAM:
+#include<iostream>
+using namespace std;
+class vehicle{
+	public:
+		virtual void drives(){
+			cout<<"vehicle is being driven";
+		}
+};
+class car:public vehicle{
+	public:
+		void drives() override{
+		cout<<"by a man"<<endl;
+		}
+};
+class truck:public vehicle{
+	public:
+		void drives() override{
+		cout<<"with a load"<<endl;
+		}
+};
+int main(){
+car car;
+truck truck;
+cout<<"car drives";
+car.drives();
+cout<<"truck drives";
+truck.drives();
+vehicle*vehicle1=&car;
+vehicle*vehicle2=&truck;
+cout<<"vehicle1 drives:";
+vehicle1->drives();
+cout<<"vehicle2 drives:";
+vehicle2->drives();
+return 0;
+}
+7.	Create a base class called Employee with a virtual function calculate Pay(). Derive two classes Manager and Engineer from the base class. Implement the calculatePay () function for each class.
+PROGRAM:
+#include <iostream>
+using namespace std;
+class Employee {
+public:
+    virtual double calculatePay() {
+        return 0.0;
+    }
+};
+class Manager : public Employee {
+public:
+    double calculatePay() override {
+        return 5000.0; 
+    }
+};
+class Engineer : public Employee {
+public:
+    double calculatePay()  override {
+        return 4000.0; 
+    }
+};
+int main() {
+    Manager manager;
+    Engineer engineer;
+    cout << "Manager's monthly pay: $" << manager.calculatePay() <<endl;
+    cout << "Engineer's monthly pay: $" << engineer.calculatePay() <<endl;
+    Employee* employee1 = &manager;
+    Employee* employee2 = &engineer;
+    cout << "Employee 1's monthly pay: $" << employee1->calculatePay() <<endl;
+    cout << "Employee 2's monthly pay: $" << employee2->calculatePay() <<endl;
+    return 0;
+}
+8.	Create a base class called Animal with a virtual function speak(). Derive two classes Cat and Dog from the base class. Implement the speak() function for each class.
+PROGRAM:
+#include <iostream>
+using namespace std;
+class Animal {
+public:
+    virtual void speak() {
+        cout << "Animal speaks" <<endl;
+    }
+};
+class Cat : public Animal {
+public:
+    void speak()  override {
+        cout << "Meow!" <<endl;
+    }
+};
+class Dog : public Animal {
+public:
+    void speak()  override {
+        cout << "Woof!" <<endl;
+    }
+};
+int main() {
+    Cat cat;
+    Dog dog;
+    cout << "Cat says: ";
+    cat.speak();
+    cout << "Dog says: ";
+    dog.speak();
+    Animal* animal1 = &cat;
+    Animal* animal2 = &dog;
+    cout << "Animal 1 says: ";
+    animal1->speak();
+    cout << "Animal 2 says: ";
+    animal2->speak();
+    return 0;
+}
+9.	Create a base class called Shape with a virtual function area(). Derive two classes Rectangle and Circle from the base class. Implement the area() function for each class.
+PROGRAM:
+#include <iostream>
+using namespace std;
+class Shape {
+public:
+    virtual double area() const = 0;  
+    virtual ~Shape() {}
+};
+class Rectangle : public Shape {
+private:
+    double length;
+    double width;
+public:
+    Rectangle(double l, double w) : length(l), width(w) {}
+    double area() const override {
+        return length * width;
+    }
+};
+class Circle : public Shape {
+private:
+    double radius;
+public:
+    Circle(double r) : radius(r) {}
+    double area() const override {
+        return 3.14159 * radius * radius;
+    }
+};
+int main() {
+    Rectangle rectangle(4, 5);
+    Circle circle(3);
+    const Shape* shape1 = &rectangle;
+    const Shape* shape2 = &circle;
+    cout << "Area of Rectangle: " << shape1->area() << endl;
+    cout << "Area of Circle: " << shape2->area() << endl;
+    return 0;
+}

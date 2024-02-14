@@ -4132,3 +4132,76 @@ int main() {
     cout << "Area of Circle: " << shape2->area() << endl;
     return 0;
 }
+31) Write a program to convert Decimal number equivalent to Binary number and octal numbers?
+#include<iostream>
+using namespace std;
+int main(){
+	int dec,bin[16],i=0,j=0;
+	cout<<"decimal:";
+	cin>>dec;
+	while(dec>0){
+		bin[i]=dec%2;
+		dec=dec/2;
+		++i;
+	}
+	for(j=i-1;j>=0;--j)
+	cout<<bin[j];
+}
+32)string word count?
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main(){
+	string a;
+	cout<<"Enter:";
+	getline(cin,a);
+	cout<<a;
+	int c=0;
+	for (char i: a){
+		if(i==" "){
+			c++;
+		}
+	}
+cout<<c;
+}
+33)binary to decimal?
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main(){
+	int a;
+	cout<<"Enter:";
+	cin>>a;
+	int i=0,r,d=0;
+	while(a!=0){
+	r=a%10;
+	d+=r*pow(2,i);
+	i++;
+	a=a/10;
+	}
+		cout<<d;
+	}
+	34)octal to binary
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main(){
+	int a;
+	cout<<"Enter:";
+	cin>>a;
+	int i=0,r,d=0,b=0,j=1,k;
+	while(a!=0){
+	r=a%10;
+	d+=r*pow(8,i);
+	a=a/10;
+	i++;
+	}
+	while(d!=0){
+	k=d%2;
+	b+=k*j;
+	d=d/2;
+	j=j*10;
+	}
+		cout<<b;
+	}
+	
